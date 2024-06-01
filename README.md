@@ -358,14 +358,31 @@ MiB Swap:      0.0 total,      0.0 free,      0.0 used.   6103.8 avail Mem
 @marziq ➜ /workspaces/OSProject (main) $ uname -a
 Linux codespaces-48772a 6.5.0-1021-azure #22~22.04.1-Ubuntu SMP Tue Apr 30 16:08:18 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
 ```
-11. What is the available free memory in the system. ***(1 mark)*** __Fill answer here__.
+11. What is the available free memory in the system. ***(1 mark)***
+```bash
+246Mi
+```
 12. What is the available disk space mounted on /workspace. ***(1 mark)*** __Fill answer here__.
 13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** __Fill answer here__.
-14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** __Fill answer here__.
-15. What is the TLB size of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
-16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
-17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** __Fill answer here__.
-
+14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** 
+```bash
+ls :List only the visible files
+and ls -asl : List all of the files including the hidden ones . - a (all) , -s (size) and -l (long format) files .
+```
+15. What is the TLB size of the Virtual CPU. ***(1 mark)*** 
+```bash
+Processor 0:  2560 4K pages
+Processor 1:  2560 4K pages
+```
+16. What is the CPU speed of the Virtual CPU. ***(1 mark)***
+```bash
+Processor 0 : 3244.283 Mhz
+Processor 1: 3243.903
+```
+17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** 
+```bash
+ 1233 codespa+  20   0   21.1g 349184  46336 S   1.3   4.3   0:45.60 node  
+```
 ## Running your own container instance.
 
 1. At the terminal, run a linux instance. By typing the following command. 
