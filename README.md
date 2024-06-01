@@ -546,10 +546,35 @@ docker run -itd --net rednet --name c2 busybox sh
 ```bash
 Busybox provides several Unix utilities in a single executable file. The --name switch is a common option used in various command-line tools to specify a custom name for something being created or referred to
 ```
-2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)*** __Fill answer here__.
-3. Using ```docker inspect c1``` and ```docker inspect c2``` inscpect the two network. What is the gateway of bluenet and rednet.? ***(1 mark)*** __Fill answer here__.
-4. What is the network address for the running container c1 and c2? ***(1 mark)*** __Fill answer here__.
-5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** __Fill answer here__.
+
+2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)*** 
+```bash
+@marziq ➜ /workspaces/OSProject (main) $ docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+81994accbfc1   bluenet   bridge    local
+35d5775fe100   bridge    bridge    local
+6750144f8721   host      host      local
+08b6a5c9336c   none      null      local
+c88624d6a0d1   rednet    bridge    local
+```
+
+3. Using ```docker inspect c1``` and ```docker inspect c2``` inscpect the two network. What is the gateway of bluenet and rednet.? ***(1 mark)*** 
+```bash
+Bluenet gateway: 172.18.0.1
+Rednet gateway: 172.19.0.1
+```
+
+4. What is the network address for the running container c1 and c2? ***(1 mark)*** 
+```bash
+C1: 172.18.0.2
+C2: 172.19.0.2
+```
+
+5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** 
+```bash
+@marziq ➜ /workspaces/OSProject (main) $ docker exec c1 ping c2
+ping: bad address 'c2'
+```
 
 ## Bridging two SUB Networks
 1. Let's try this again by creating a network to bridge the two containers in the two subnetworks
@@ -561,9 +586,21 @@ docker exec c1 ping c2
 ```
 ***Questions:***
 
-1. Are you able to ping? Show your output . ***(1 mark)*** __Fill answer here__.
-2. What is different from the previous ping in the section above? ***(1 mark)*** __Fill answer here__.
-
+1. Are you able to ping? Show your output . ***(1 mark)*** 
+```bash
+@marziq ➜ /workspaces/OSProject (main) $ docker exec c1 ping c2
+PING c2 (172.20.0.3): 56 data bytes
+64 bytes from 172.20.0.3: seq=0 ttl=64 time=0.081 ms
+64 bytes from 172.20.0.3: seq=1 ttl=64 time=0.142 ms
+64 bytes from 172.20.0.3: seq=2 ttl=64 time=0.073 ms
+64 bytes from 172.20.0.3: seq=3 ttl=64 time=0.084 ms
+64 bytes from 172.20.0.3: seq=4 ttl=64 time=0.117 ms
+...
+```
+2. What is different from the previous ping in the section above? ***(1 mark)*** 
+```bash
+Previous cannot ping because we not yet bridge the network.
+```
 ## Intermediate Level (10 marks bonus)
 
 ### Node.js and MySQL in Docker Containers
