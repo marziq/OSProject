@@ -28,7 +28,10 @@ Team Mates:
    ```bash
    https://github.com/marziq/OSProject
    ```
-3. How many files and folders are in this repository. ***(1 mark)*** __Fill answer here__.
+3. How many files and folders are in this repository. ***(1 mark)***
+   ```bash
+   7 Files 1 folder
+   ```
 
 
 ## Exploring github codespaces
