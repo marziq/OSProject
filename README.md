@@ -362,8 +362,14 @@ Linux codespaces-48772a 6.5.0-1021-azure #22~22.04.1-Ubuntu SMP Tue Apr 30 16:08
 ```bash
 246Mi
 ```
-12. What is the available disk space mounted on /workspace. ***(1 mark)*** __Fill answer here__.
-13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** __Fill answer here__.
+12. What is the available disk space mounted on /workspace. ***(1 mark)*** 
+```bash
+20807060 KB
+```
+13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** 
+```bash
+Linux codespaces-48772a 6.5.0-1021-azure #22~22.04.1-Ubuntu SMP Tue Apr 30 16:08:18 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+```
 14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** 
 ```bash
 ls :List only the visible files
