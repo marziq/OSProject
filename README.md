@@ -742,8 +742,15 @@ You have now set up a Node.js application in a Docker container on nodejsnet net
 
 ***Questions:***
 
-1. What is the output of step 5 above, explain the error? ***(1 mark)*** __Fill answer here__.
-2. Show the instruction needed to make this work. ***(1 mark)*** __Fill answer here__.
+1. What is the output of step 5 above, explain the error? ***(1 mark)***
+```bash
+@marziq ➜ /workspaces/OSProject/nodejs-app (main) $ curl http://localhost:3000/random
+Server Error@marziq ➜ /workspaces/OSProject/nodejs-app (main) $ 
+```
+2. Show the instruction needed to make this work. ***(1 mark)***
+```bash
+
+```
 
 
 
