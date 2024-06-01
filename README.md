@@ -143,123 +143,122 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
    /dev/root       30298176 24353604   5928188  81% /vscode
    /dev/sdb1       46127956       84  43752296   1% /tmp
    /dev/loop3      32847680 10346524  20807060  34% /workspaces
-
-  ```
-
+   ```
 4. Run the command **du** . ***(1 mark)*** 
 
    ```bash
    @marziq ➜ /workspaces/OSProject (main) $ du
-1972    ./images
-4       ./.git/refs/tags
-12      ./.git/refs/remotes/origin
-16      ./.git/refs/remotes
-8       ./.git/refs/heads
-32      ./.git/refs
-4       ./.git/branches
-8       ./.git/objects/60
-8       ./.git/objects/0d
-8       ./.git/objects/1b
-8       ./.git/objects/a4
-8       ./.git/objects/51
-8       ./.git/objects/91
-8       ./.git/objects/fd
-12      ./.git/objects/64
-8       ./.git/objects/d8
-8       ./.git/objects/7b
-8       ./.git/objects/b9
-12      ./.git/objects/f1
-12      ./.git/objects/e5
-8       ./.git/objects/71
-8       ./.git/objects/41
-8       ./.git/objects/4f
-12      ./.git/objects/ff
-8       ./.git/objects/fa
-8       ./.git/objects/cd
-12      ./.git/objects/17
-12      ./.git/objects/cb
-8       ./.git/objects/fe
-8       ./.git/objects/11
-12      ./.git/objects/1c
-12      ./.git/objects/20
-8       ./.git/objects/c0
-12      ./.git/objects/72
-12      ./.git/objects/af
-12      ./.git/objects/bf
-16      ./.git/objects/0b
-8       ./.git/objects/74
-8       ./.git/objects/c6
-12      ./.git/objects/a2
-12      ./.git/objects/6e
-8       ./.git/objects/ab
-8       ./.git/objects/3a
-8       ./.git/objects/b2
-8       ./.git/objects/65
-8       ./.git/objects/eb
-8       ./.git/objects/52
-8       ./.git/objects/86
-8       ./.git/objects/4a
-8       ./.git/objects/fc
-12      ./.git/objects/ee
-8       ./.git/objects/f2
-1828    ./.git/objects/pack
-8       ./.git/objects/47
-8       ./.git/objects/58
-8       ./.git/objects/dd
-12      ./.git/objects/29
-8       ./.git/objects/04
-8       ./.git/objects/e9
-8       ./.git/objects/83
-8       ./.git/objects/f6
-16      ./.git/objects/73
-12      ./.git/objects/14
-8       ./.git/objects/81
-12      ./.git/objects/62
-8       ./.git/objects/e7
-16      ./.git/objects/fb
-8       ./.git/objects/a3
-8       ./.git/objects/a5
-12      ./.git/objects/44
-12      ./.git/objects/70
-8       ./.git/objects/24
-8       ./.git/objects/49
-12      ./.git/objects/b5
-8       ./.git/objects/8e
-12      ./.git/objects/3d
-12      ./.git/objects/2e
-8       ./.git/objects/d6
-8       ./.git/objects/f7
-8       ./.git/objects/96
-8       ./.git/objects/2b
-16      ./.git/objects/43
-20      ./.git/objects/d2
-8       ./.git/objects/c5
-8       ./.git/objects/ae
-8       ./.git/objects/c3
-8       ./.git/objects/4b
-8       ./.git/objects/93
-8       ./.git/objects/a6
-4       ./.git/objects/info
-8       ./.git/objects/b6
-8       ./.git/objects/3f
-12      ./.git/objects/e1
-8       ./.git/objects/f9
-2652    ./.git/objects
-68      ./.git/hooks
-12      ./.git/logs/refs/remotes/origin
-16      ./.git/logs/refs/remotes
-8       ./.git/logs/refs/heads
-28      ./.git/logs/refs
-36      ./.git/logs
-4       ./.git/lfs/tmp
-8       ./.git/lfs
-8       ./.git/info
-2844    ./.git
-4840    .
+   1972    ./images
+   4       ./.git/refs/tags
+   12      ./.git/refs/remotes/origin
+   16      ./.git/refs/remotes
+   8       ./.git/refs/heads
+   32      ./.git/refs
+   4       ./.git/branches
+   8       ./.git/objects/60
+   8       ./.git/objects/0d
+   8       ./.git/objects/1b
+   8       ./.git/objects/a4
+   8       ./.git/objects/51
+   8       ./.git/objects/91
+   8       ./.git/objects/fd
+   12      ./.git/objects/64
+   8       ./.git/objects/d8
+   8       ./.git/objects/7b
+   8       ./.git/objects/b9
+   12      ./.git/objects/f1
+   12      ./.git/objects/e5
+   8       ./.git/objects/71
+   8       ./.git/objects/41
+   8       ./.git/objects/4f
+   12      ./.git/objects/ff
+   8       ./.git/objects/fa
+   8       ./.git/objects/cd
+   12      ./.git/objects/17
+   12      ./.git/objects/cb
+   8       ./.git/objects/fe
+   8       ./.git/objects/11
+   12      ./.git/objects/1c
+   12      ./.git/objects/20
+   8       ./.git/objects/c0
+   12      ./.git/objects/72
+   12      ./.git/objects/af
+   12      ./.git/objects/bf
+   16      ./.git/objects/0b
+   8       ./.git/objects/74
+   8       ./.git/objects/c6
+   12      ./.git/objects/a2
+   12      ./.git/objects/6e
+   8       ./.git/objects/ab
+   8       ./.git/objects/3a
+   8       ./.git/objects/b2
+   8       ./.git/objects/65
+   8       ./.git/objects/eb
+   8       ./.git/objects/52
+   8       ./.git/objects/86
+   8       ./.git/objects/4a
+   8       ./.git/objects/fc
+   12      ./.git/objects/ee
+   8       ./.git/objects/f2
+   1828    ./.git/objects/pack
+   8       ./.git/objects/47
+   8       ./.git/objects/58
+   8       ./.git/objects/dd
+   12      ./.git/objects/29
+   8       ./.git/objects/04
+   8       ./.git/objects/e9
+   8       ./.git/objects/83
+   8       ./.git/objects/f6
+   16      ./.git/objects/73
+   12      ./.git/objects/14
+   8       ./.git/objects/81
+   12      ./.git/objects/62
+   8       ./.git/objects/e7
+   16      ./.git/objects/fb
+   8       ./.git/objects/a3
+   8       ./.git/objects/a5
+   12      ./.git/objects/44
+   12      ./.git/objects/70
+   8       ./.git/objects/24
+   8       ./.git/objects/49
+   12      ./.git/objects/b5
+   8       ./.git/objects/8e
+   12      ./.git/objects/3d
+   12      ./.git/objects/2e
+   8       ./.git/objects/d6
+   8       ./.git/objects/f7
+   8       ./.git/objects/96
+   8       ./.git/objects/2b
+   16      ./.git/objects/43
+   20      ./.git/objects/d2
+   8       ./.git/objects/c5
+   8       ./.git/objects/ae
+   8       ./.git/objects/c3
+   8       ./.git/objects/4b
+   8       ./.git/objects/93
+   8       ./.git/objects/a6
+   4       ./.git/objects/info
+   8       ./.git/objects/b6
+   8       ./.git/objects/3f
+   12      ./.git/objects/e1
+   8       ./.git/objects/f9
+   2652    ./.git/objects
+   68      ./.git/hooks
+   12      ./.git/logs/refs/remotes/origin
+   16      ./.git/logs/refs/remotes
+   8       ./.git/logs/refs/heads
+   28      ./.git/logs/refs
+   36      ./.git/logs
+   4       ./.git/lfs/tmp
+   8       ./.git/lfs
+   8       ./.git/info
+   2844    ./.git
+   4840    .
 
-```
+   ```
 
 5. Run the command **ls** . ***(1 mark)*** 
+
   ```bash
   @marziq ➜ /workspaces/OSProject (main) $ ls
   README.md  images
