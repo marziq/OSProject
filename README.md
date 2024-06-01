@@ -69,8 +69,16 @@ Team Mates:
 Linux
 ```
 
-2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** __Fill answer here__.
-3. Why must we commit and sync our current work on source control? ***(1 mark)*** __Fill answer here__.
+2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** 
+```bash
+There is two type
+-Standard which includes 2 vCPUs,4GB of RAM and 64 GB of disk space .
+-Performance which includes 4 vCPUs,8GB of RAM and 64 GB of disk space.
+```
+3. Why must we commit and sync our current work on source control? ***(1 mark)***
+```bash
+This allows you to keep your local repository up to date with the latest changes from other contributors.
+```
 
 ## Exploring the Terminal
 
