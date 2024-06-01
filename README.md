@@ -389,6 +389,7 @@ Processor 1: 3243.903
 ```bash
  1233 codespa+  20   0   21.1g 349184  46336 S   1.3   4.3   0:45.60 node  
 ```
+
 ## Running your own container instance.
 
 1. At the terminal, run a linux instance. By typing the following command. 
@@ -447,8 +448,14 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 
 ***Questions:***
 
-1. Are files in the container persistent. Why not?. ***(1 mark)*** __Fill answer here__.
-2. Can we run two, or three instances of debian linux? . ***(1 mark)*** __Fill answer here__.
+1. Are files in the container persistent. Why not?. ***(1 mark)*** 
+```bash
+Not persistent because their are following their container 
+```
+2. Can we run two, or three instances of debian linux? . ***(1 mark)*** 
+```bash
+yes
+```
 
 ## Running your own container with persistent storage
 
