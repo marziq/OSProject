@@ -133,19 +133,21 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
    ```
 
 3. Run the command **df** . ***(1 mark)*** 
+
    ```bash
    @marziq ➜ /workspaces/OSProject (main) $ df
-Filesystem     1K-blocks     Used Available Use% Mounted on
-overlay         32847680 10346524  20807060  34% /
-tmpfs              65536        0     65536   0% /dev
-shm                65536        0     65536   0% /dev/shm
-/dev/root       30298176 24353604   5928188  81% /vscode
-/dev/sdb1       46127956       84  43752296   1% /tmp
-/dev/loop3      32847680 10346524  20807060  34% /workspaces
+   Filesystem     1K-blocks     Used Available Use% Mounted on
+   overlay         32847680 10346524  20807060  34% /
+   tmpfs              65536        0     65536   0% /dev
+   shm                65536        0     65536   0% /dev/shm
+   /dev/root       30298176 24353604   5928188  81% /vscode
+   /dev/sdb1       46127956       84  43752296   1% /tmp
+   /dev/loop3      32847680 10346524  20807060  34% /workspaces
 
   ```
 
 4. Run the command **du** . ***(1 mark)*** 
+
    ```bash
    @marziq ➜ /workspaces/OSProject (main) $ du
 1972    ./images
