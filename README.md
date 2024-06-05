@@ -66,18 +66,17 @@ Team Mates:
 
 1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** 
 ```bash
-Linux
+Ubuntu Linux
 ```
 
 2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** 
 ```bash
-There is two type
--Standard which includes 2 vCPUs,4GB of RAM and 64 GB of disk space .
--Performance which includes 4 vCPUs,8GB of RAM and 64 GB of disk space.
+2 cores, 8 GB RAM, and 32 GB storage
+32 cores, 64 GB RAM, and 128 GB storage.
 ```
 3. Why must we commit and sync our current work on source control? ***(1 mark)***
 ```bash
-This allows you to keep your local repository up to date with the latest changes from other contributors.
+To ensure that all changes are saved and shared with others, allowing collaboration
 ```
 
 ## Exploring the Terminal
@@ -360,7 +359,7 @@ Linux codespaces-48772a 6.5.0-1021-azure #22~22.04.1-Ubuntu SMP Tue Apr 30 16:08
 ```
 11. What is the available free memory in the system. ***(1 mark)***
 ```bash
-246Mi
+229Mi
 ```
 12. What is the available disk space mounted on /workspace. ***(1 mark)*** 
 ```bash
@@ -515,7 +514,7 @@ docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ 
 
 1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)*** 
 ```bash
-user is workspace and group is myroot 
+The permission is rwxr-xr-x (755), and it is owned by the user root and group root.
 ```
 2. What port is the apache web server running. ***(1 mark)*** 
 ```bash
@@ -523,7 +522,7 @@ user is workspace and group is myroot
 ```
 3. What port is open for http protocol on the host machine? ***(1 mark)*** 
 ```bash
-8080
+Port 8080
 ```
 ## Create SUB Networks
 
