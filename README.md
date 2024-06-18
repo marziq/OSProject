@@ -802,7 +802,19 @@ Server Error@marziq ➜ /workspaces/OSProject/nodejs-app (main) $
 
 2. Show the instruction needed to make this work. ***(1 mark)***
 ```bash
+Check Node.js Application Logsr.
 
+Verify Database Connection
+
+Test Database Connection
+
+Check Docker Network Configuration
+
+Inspect Docker Container Logs
+
+Review Dockerfile and Docker Container Configuration
+
+Verify Database Schema and Data
 ```
 
 
