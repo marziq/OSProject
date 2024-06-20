@@ -613,7 +613,7 @@ PING c2 (172.20.0.3): 56 data bytes
 ```
 2. What is different from the previous ping in the section above? ***(1 mark)*** 
 ```bash
-Previous cannot ping because we not yet bridge the network.
+In previous ping, we could not ping because we have not yet bridge the network.
 ```
 ## Intermediate Level (10 marks bonus)
 
