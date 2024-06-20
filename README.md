@@ -396,38 +396,12 @@ Processor 1: 3243.903
 docker pull debian
 docker run --detach -it debian
 ```
-```bash
-@marziq ➜ /workspaces/OSProject (main) $ docker pull debian
-Using default tag: latest
-latest: Pulling from library/debian
-fea1432adf09: Pull complete 
-Digest: sha256:a92ed51e0996d8e9de041ca05ce623d2c491444df6a535a566dabd5cb8336946
-Status: Downloaded newer image for debian:latest
-docker.io/library/debian:latest
-@marziq ➜ /workspaces/OSProject (main) $ docker run --detach -it debian
-4f6c811eabecf9101e10dd90ebd694c922ea6e8c4228053d97bb839fc3bdfb4f
-```
 
 2. This will run the debian container. To check if the debian container is running, type
 ```bash
-@marziq ➜ /workspaces/OSProject (main) $ docker ps -a
-CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                     PORTS                                       NAMES
-4f6c811eabec   debian         "bash"                   37 seconds ago   Up 36 seconds                                                          elegant_carver
-16faa38612d5   nodejs-app     "docker-entrypoint.s…"   2 weeks ago      Exited (255) 2 weeks ago   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   nodejs-container
-670e22c744a8   mysql:latest   "docker-entrypoint.s…"   2 weeks ago      Exited (255) 2 weeks ago   3306/tcp, 33060/tcp                         mysql-container
-8aa85d830151   busybox        "sh"                     2 weeks ago      Exited (255) 2 weeks ago                                               c2
-b463472d6366   busybox        "sh"                     2 weeks ago      Exited (255) 2 weeks ago                                               c1
-bbc5a9f2ac5e   httpd          "httpd-foreground"       2 weeks ago      Exited (255) 2 weeks ago   0.0.0.0:8080->80/tcp, :::8080->80/tcp       nice_jang
-0a33c583825a   httpd          "httpd-foreground"       2 weeks ago      Created                                                                jovial_haibt
-458aa3171848   httpd          "httpd-foreground"       2 weeks ago      Exited (0) 2 weeks ago                                                 sad_wright
-8be598e57a98   httpd          "httpd-foreground"       2 weeks ago      Exited (0) 2 weeks ago                                                 festive_snyder
-044aad6b3c49   httpd          "httpd-foreground"       2 weeks ago      Exited (0) 2 weeks ago                                                 affectionate_goldstine
-8489dbee198e   httpd          "httpd-foreground"       2 weeks ago      Created                                                                great_brown
-f941d503da96   httpd          "httpd-foreground"       2 weeks ago      Created                                                                charming_snyder
-9db3aa412d77   httpd          "httpd-foreground"       2 weeks ago      Created                                                                recursing_carver
-a0c6afd8fdcf   httpd          "httpd-foreground"       2 weeks ago      Exited (0) 2 weeks ago                                                 relaxed_lederberg
-be68176069a7   5027089adc4c   "bash"                   2 weeks ago      Exited (255) 2 weeks ago                                               kind_austin
-4e4a5125e92a   5027089adc4c   "bash"                   2 weeks ago      Exited (255) 2 weeks ago                                               vibrant_villani
+@joeynor ➜ /workspaces/OSProject (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS         PORTS     NAMES
+f65be1987f84   debian    "bash"    4 minutes ago   Up 4 minutes             romantic_jackson
 ```
 
 3. Keep note of the name used by your container, this is usually given random names unless you specify your own name. Now run a bash command on the container. Make sure you use the name of your container instead of the one shown here. 
@@ -460,31 +434,6 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 @joeynor ➜ /workspaces/OSProject (main) $ docker restart romantic_jackson
 ```
 
-```bash
-@marziq ➜ /workspaces/OSProject (main) $ docker stop elegant_carver
-elegant_carver
-@marziq ➜ /workspaces/OSProject (main) $ docker ps -a
-CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS                        PORTS                                       NAMES
-4f6c811eabec   debian         "bash"                   4 minutes ago   Exited (137) 13 seconds ago                                               elegant_carver
-16faa38612d5   nodejs-app     "docker-entrypoint.s…"   2 weeks ago     Exited (255) 2 weeks ago      0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   nodejs-container
-670e22c744a8   mysql:latest   "docker-entrypoint.s…"   2 weeks ago     Exited (255) 2 weeks ago      3306/tcp, 33060/tcp                         mysql-container
-8aa85d830151   busybox        "sh"                     2 weeks ago     Exited (255) 2 weeks ago                                                  c2
-b463472d6366   busybox        "sh"                     2 weeks ago     Exited (255) 2 weeks ago                                                  c1
-bbc5a9f2ac5e   httpd          "httpd-foreground"       2 weeks ago     Exited (255) 2 weeks ago      0.0.0.0:8080->80/tcp, :::8080->80/tcp       nice_jang
-0a33c583825a   httpd          "httpd-foreground"       2 weeks ago     Created                                                                   jovial_haibt
-458aa3171848   httpd          "httpd-foreground"       2 weeks ago     Exited (0) 2 weeks ago                                                    sad_wright
-8be598e57a98   httpd          "httpd-foreground"       2 weeks ago     Exited (0) 2 weeks ago                                                    festive_snyder
-044aad6b3c49   httpd          "httpd-foreground"       2 weeks ago     Exited (0) 2 weeks ago                                                    affectionate_goldstine
-8489dbee198e   httpd          "httpd-foreground"       2 weeks ago     Created                                                                   great_brown
-f941d503da96   httpd          "httpd-foreground"       2 weeks ago     Created                                                                   charming_snyder
-9db3aa412d77   httpd          "httpd-foreground"       2 weeks ago     Created                                                                   recursing_carver
-a0c6afd8fdcf   httpd          "httpd-foreground"       2 weeks ago     Exited (0) 2 weeks ago                                                    relaxed_lederberg
-be68176069a7   5027089adc4c   "bash"                   2 weeks ago     Exited (255) 2 weeks ago                                                  kind_austin
-4e4a5125e92a   5027089adc4c   "bash"                   2 weeks ago     Exited (255) 2 weeks ago                                                  vibrant_villani
-@marziq ➜ /workspaces/OSProject (main) $ docker restart elegant_carver
-elegant_carver
-@marziq ➜ /workspaces/OSProject (main) $ 
-```
 7. Stop the container and delete the container. What happened to your helloworld.txt?
 
 ```bash 
@@ -506,7 +455,7 @@ No, files in a container are not persistent because containers reset every time 
 ```
 2. Can we run two, or three instances of debian linux? . ***(1 mark)*** 
 ```bash
-yes
+Yes
 ```
 
 ## Running your own container with persistent storage
