@@ -8,7 +8,7 @@ Team Mates:
 1. Ammar Haziq bin Zainal 2217763
 2. Arina Batrisyia Sobhan binti Mohd Razali 2217572
 3. Adlyn Sofea binti Mohd Ariff Adika 2214042
-4. Aishah Humairah Binti Ahmad Adzuan 2219130
+4. Aisha Humairah Binti Ahmad Adzuan 2219130
 
 ## Rules
 1. You are allowed to have **3 group** members. *Exception* is allowed **IFF (if and only if)** you are allowed to have 4 group members if you are a **multinational** or a **multigender** group. 
