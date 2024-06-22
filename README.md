@@ -134,125 +134,446 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
 3. Run the command **df** . ***(1 mark)*** 
 
    ```bash
-   @marziq ➜ /workspaces/OSProject (main) $ df
-   Filesystem     1K-blocks     Used Available Use% Mounted on
-   overlay         32847680 10346524  20807060  34% /
-   tmpfs              65536        0     65536   0% /dev
-   shm                65536        0     65536   0% /dev/shm
-   /dev/root       30298176 24353604   5928188  81% /vscode
-   /dev/sdb1       46127956       84  43752296   1% /tmp
-   /dev/loop3      32847680 10346524  20807060  34% /workspaces
+@marziq ➜ /workspaces/OSProject (main) $ df
+Filesystem     1K-blocks     Used Available Use% Mounted on
+overlay         32847728 12706868  18446768  41% /
+tmpfs              65536        0     65536   0% /dev
+shm                65536        0     65536   0% /dev/shm
+/dev/root       30298176 24196376   6085416  80% /vscode
+/dev/sdb1       46127956       88  43752292   1% /tmp
+/dev/loop3      32847728 12706868  18446768  41% /workspaces
    ```
 4. Run the command **du** . ***(1 mark)*** 
 
    ```bash
    @marziq ➜ /workspaces/OSProject (main) $ du
-   1972    ./images
-   4       ./.git/refs/tags
-   12      ./.git/refs/remotes/origin
-   16      ./.git/refs/remotes
-   8       ./.git/refs/heads
-   32      ./.git/refs
-   4       ./.git/branches
-   8       ./.git/objects/60
-   8       ./.git/objects/0d
-   8       ./.git/objects/1b
-   8       ./.git/objects/a4
-   8       ./.git/objects/51
-   8       ./.git/objects/91
-   8       ./.git/objects/fd
-   12      ./.git/objects/64
-   8       ./.git/objects/d8
-   8       ./.git/objects/7b
-   8       ./.git/objects/b9
-   12      ./.git/objects/f1
-   12      ./.git/objects/e5
-   8       ./.git/objects/71
-   8       ./.git/objects/41
-   8       ./.git/objects/4f
-   12      ./.git/objects/ff
-   8       ./.git/objects/fa
-   8       ./.git/objects/cd
-   12      ./.git/objects/17
-   12      ./.git/objects/cb
-   8       ./.git/objects/fe
-   8       ./.git/objects/11
-   12      ./.git/objects/1c
-   12      ./.git/objects/20
-   8       ./.git/objects/c0
-   12      ./.git/objects/72
-   12      ./.git/objects/af
-   12      ./.git/objects/bf
-   16      ./.git/objects/0b
-   8       ./.git/objects/74
-   8       ./.git/objects/c6
-   12      ./.git/objects/a2
-   12      ./.git/objects/6e
-   8       ./.git/objects/ab
-   8       ./.git/objects/3a
-   8       ./.git/objects/b2
-   8       ./.git/objects/65
-   8       ./.git/objects/eb
-   8       ./.git/objects/52
-   8       ./.git/objects/86
-   8       ./.git/objects/4a
-   8       ./.git/objects/fc
-   12      ./.git/objects/ee
-   8       ./.git/objects/f2
-   1828    ./.git/objects/pack
-   8       ./.git/objects/47
-   8       ./.git/objects/58
-   8       ./.git/objects/dd
-   12      ./.git/objects/29
-   8       ./.git/objects/04
-   8       ./.git/objects/e9
-   8       ./.git/objects/83
-   8       ./.git/objects/f6
-   16      ./.git/objects/73
-   12      ./.git/objects/14
-   8       ./.git/objects/81
-   12      ./.git/objects/62
-   8       ./.git/objects/e7
-   16      ./.git/objects/fb
-   8       ./.git/objects/a3
-   8       ./.git/objects/a5
-   12      ./.git/objects/44
-   12      ./.git/objects/70
-   8       ./.git/objects/24
-   8       ./.git/objects/49
-   12      ./.git/objects/b5
-   8       ./.git/objects/8e
-   12      ./.git/objects/3d
-   12      ./.git/objects/2e
-   8       ./.git/objects/d6
-   8       ./.git/objects/f7
-   8       ./.git/objects/96
-   8       ./.git/objects/2b
-   16      ./.git/objects/43
-   20      ./.git/objects/d2
-   8       ./.git/objects/c5
-   8       ./.git/objects/ae
-   8       ./.git/objects/c3
-   8       ./.git/objects/4b
-   8       ./.git/objects/93
-   8       ./.git/objects/a6
-   4       ./.git/objects/info
-   8       ./.git/objects/b6
-   8       ./.git/objects/3f
-   12      ./.git/objects/e1
-   8       ./.git/objects/f9
-   2652    ./.git/objects
-   68      ./.git/hooks
-   12      ./.git/logs/refs/remotes/origin
-   16      ./.git/logs/refs/remotes
-   8       ./.git/logs/refs/heads
-   28      ./.git/logs/refs
-   36      ./.git/logs
-   4       ./.git/lfs/tmp
-   8       ./.git/lfs
-   8       ./.git/info
-   2844    ./.git
-   4840    .
+16      ./nodejs-app/node_modules/string_decoder/lib
+48      ./nodejs-app/node_modules/string_decoder/node_modules/safe-buffer
+52      ./nodejs-app/node_modules/string_decoder/node_modules
+88      ./nodejs-app/node_modules/string_decoder
+40      ./nodejs-app/node_modules/finalhandler
+220     ./nodejs-app/node_modules/mime-db
+24      ./nodejs-app/node_modules/unpipe
+36      ./nodejs-app/node_modules/isarray
+24      ./nodejs-app/node_modules/vary
+20      ./nodejs-app/node_modules/ee-first
+20      ./nodejs-app/node_modules/process-nextick-args
+12      ./nodejs-app/node_modules/sqlstring/lib
+40      ./nodejs-app/node_modules/sqlstring
+12      ./nodejs-app/node_modules/has-symbols/test/shams
+24      ./nodejs-app/node_modules/has-symbols/test
+8       ./nodejs-app/node_modules/has-symbols/.github
+72      ./nodejs-app/node_modules/has-symbols
+64      ./nodejs-app/node_modules/safer-buffer
+32      ./nodejs-app/node_modules/http-errors
+12      ./nodejs-app/node_modules/express/lib/middleware
+32      ./nodejs-app/node_modules/express/lib/router
+124     ./nodejs-app/node_modules/express/lib
+260     ./nodejs-app/node_modules/express
+4       ./nodejs-app/node_modules/.bin
+28      ./nodejs-app/node_modules/body-parser/lib/types
+40      ./nodejs-app/node_modules/body-parser/lib
+100     ./nodejs-app/node_modules/body-parser
+28      ./nodejs-app/node_modules/etag
+8       ./nodejs-app/node_modules/setprototypeof/test
+32      ./nodejs-app/node_modules/setprototypeof
+8       ./nodejs-app/node_modules/has-property-descriptors/test
+8       ./nodejs-app/node_modules/has-property-descriptors/.github
+48      ./nodejs-app/node_modules/has-property-descriptors
+16      ./nodejs-app/node_modules/define-data-property/test
+8       ./nodejs-app/node_modules/define-data-property/.github
+72      ./nodejs-app/node_modules/define-data-property
+24      ./nodejs-app/node_modules/forwarded
+32      ./nodejs-app/node_modules/on-finished
+28      ./nodejs-app/node_modules/ipaddr.js/lib
+64      ./nodejs-app/node_modules/ipaddr.js
+36      ./nodejs-app/node_modules/type-is
+12      ./nodejs-app/node_modules/mime/src
+80      ./nodejs-app/node_modules/mime
+32      ./nodejs-app/node_modules/proxy-addr
+28      ./nodejs-app/node_modules/media-typer
+28      ./nodejs-app/node_modules/bytes
+24      ./nodejs-app/node_modules/inherits
+92      ./nodejs-app/node_modules/bignumber.js/doc
+420     ./nodejs-app/node_modules/bignumber.js
+84      ./nodejs-app/node_modules/qs/test
+72      ./nodejs-app/node_modules/qs/dist
+8       ./nodejs-app/node_modules/qs/.github
+44      ./nodejs-app/node_modules/qs/lib
+288     ./nodejs-app/node_modules/qs
+20      ./nodejs-app/node_modules/readable-stream/lib/internal/streams
+24      ./nodejs-app/node_modules/readable-stream/lib/internal
+96      ./nodejs-app/node_modules/readable-stream/lib
+48      ./nodejs-app/node_modules/readable-stream/node_modules/safe-buffer
+52      ./nodejs-app/node_modules/readable-stream/node_modules
+8       ./nodejs-app/node_modules/readable-stream/doc/wg-meetings
+12      ./nodejs-app/node_modules/readable-stream/doc
+224     ./nodejs-app/node_modules/readable-stream
+8       ./nodejs-app/node_modules/es-define-property/test
+8       ./nodejs-app/node_modules/es-define-property/.github
+56      ./nodejs-app/node_modules/es-define-property
+20      ./nodejs-app/node_modules/send/node_modules/ms
+24      ./nodejs-app/node_modules/send/node_modules
+92      ./nodejs-app/node_modules/send
+24      ./nodejs-app/node_modules/range-parser
+24      ./nodejs-app/node_modules/destroy
+8       ./nodejs-app/node_modules/gopd/test
+8       ./nodejs-app/node_modules/gopd/.github
+44      ./nodejs-app/node_modules/gopd
+36      ./nodejs-app/node_modules/accepts
+24      ./nodejs-app/node_modules/methods
+44      ./nodejs-app/node_modules/raw-body
+12      ./nodejs-app/node_modules/call-bind/test
+8       ./nodejs-app/node_modules/call-bind/.github
+64      ./nodejs-app/node_modules/call-bind
+36      ./nodejs-app/node_modules/content-disposition
+8       ./nodejs-app/node_modules/side-channel/test
+8       ./nodejs-app/node_modules/side-channel/.github
+68      ./nodejs-app/node_modules/side-channel
+20      ./nodejs-app/node_modules/function-bind/test
+12      ./nodejs-app/node_modules/function-bind/.github
+80      ./nodejs-app/node_modules/function-bind
+32      ./nodejs-app/node_modules/mime-types
+24      ./nodejs-app/node_modules/fresh
+24      ./nodejs-app/node_modules/utils-merge
+24      ./nodejs-app/node_modules/path-to-regexp
+8       ./nodejs-app/node_modules/depd/lib/browser
+12      ./nodejs-app/node_modules/depd/lib
+52      ./nodejs-app/node_modules/depd
+36      ./nodejs-app/node_modules/debug/src
+112     ./nodejs-app/node_modules/debug
+8       ./nodejs-app/node_modules/set-function-length/.github
+60      ./nodejs-app/node_modules/set-function-length
+8       ./nodejs-app/node_modules/has-proto/test
+8       ./nodejs-app/node_modules/has-proto/.github
+52      ./nodejs-app/node_modules/has-proto
+40      ./nodejs-app/node_modules/serve-static
+24      ./nodejs-app/node_modules/cookie-signature
+20      ./nodejs-app/node_modules/array-flatten
+24      ./nodejs-app/node_modules/merge-descriptors
+36      ./nodejs-app/node_modules/iconv-lite/lib
+232     ./nodejs-app/node_modules/iconv-lite/encodings/tables
+348     ./nodejs-app/node_modules/iconv-lite/encodings
+412     ./nodejs-app/node_modules/iconv-lite
+20      ./nodejs-app/node_modules/object-inspect/example
+8       ./nodejs-app/node_modules/object-inspect/test/browser
+96      ./nodejs-app/node_modules/object-inspect/test
+8       ./nodejs-app/node_modules/object-inspect/.github
+216     ./nodejs-app/node_modules/object-inspect
+48      ./nodejs-app/node_modules/safe-buffer
+40      ./nodejs-app/node_modules/cookie
+8       ./nodejs-app/node_modules/es-errors/test
+8       ./nodejs-app/node_modules/es-errors/.github
+100     ./nodejs-app/node_modules/es-errors
+24      ./nodejs-app/node_modules/negotiator/lib
+52      ./nodejs-app/node_modules/negotiator
+8       ./nodejs-app/node_modules/hasown/.github
+48      ./nodejs-app/node_modules/hasown
+20      ./nodejs-app/node_modules/ms
+28      ./nodejs-app/node_modules/content-type
+8       ./nodejs-app/node_modules/core-util-is/lib
+24      ./nodejs-app/node_modules/core-util-is
+100     ./nodejs-app/node_modules/mysql/lib/protocol/packets
+288     ./nodejs-app/node_modules/mysql/lib/protocol/constants
+40      ./nodejs-app/node_modules/mysql/lib/protocol/sequences
+496     ./nodejs-app/node_modules/mysql/lib/protocol
+556     ./nodejs-app/node_modules/mysql/lib
+48      ./nodejs-app/node_modules/mysql/node_modules/safe-buffer
+52      ./nodejs-app/node_modules/mysql/node_modules
+712     ./nodejs-app/node_modules/mysql
+24      ./nodejs-app/node_modules/encodeurl
+24      ./nodejs-app/node_modules/parseurl
+20      ./nodejs-app/node_modules/escape-html
+28      ./nodejs-app/node_modules/util-deprecate
+16      ./nodejs-app/node_modules/get-intrinsic/test
+8       ./nodejs-app/node_modules/get-intrinsic/.github
+76      ./nodejs-app/node_modules/get-intrinsic
+28      ./nodejs-app/node_modules/statuses
+24      ./nodejs-app/node_modules/toidentifier
+5544    ./nodejs-app/node_modules
+5592    ./nodejs-app
+4       ./mkdir
+1972    ./images
+4       ./myroot/.local/share/nano
+8       ./myroot/.local/share
+12      ./myroot/.local
+24      ./myroot
+8       ./webpage
+4       ./.git/refs/tags
+12      ./.git/refs/remotes/origin
+16      ./.git/refs/remotes
+8       ./.git/refs/heads
+32      ./.git/refs
+4       ./.git/branches
+20      ./.git/objects/8c
+12      ./.git/objects/bd
+24      ./.git/objects/60
+12      ./.git/objects/76
+16      ./.git/objects/0d
+20      ./.git/objects/1b
+20      ./.git/objects/59
+12      ./.git/objects/9a
+12      ./.git/objects/95
+12      ./.git/objects/a4
+12      ./.git/objects/55
+24      ./.git/objects/ea
+8       ./.git/objects/94
+16      ./.git/objects/51
+12      ./.git/objects/db
+8       ./.git/objects/bc
+8       ./.git/objects/e4
+28      ./.git/objects/c7
+20      ./.git/objects/91
+28      ./.git/objects/fd
+8       ./.git/objects/a8
+24      ./.git/objects/09
+24      ./.git/objects/06
+16      ./.git/objects/01
+16      ./.git/objects/d4
+20      ./.git/objects/25
+16      ./.git/objects/4d
+32      ./.git/objects/64
+24      ./.git/objects/27
+12      ./.git/objects/ef
+56      ./.git/objects/d8
+32      ./.git/objects/5e
+32      ./.git/objects/37
+24      ./.git/objects/e2
+8       ./.git/objects/80
+12      ./.git/objects/7b
+28      ./.git/objects/21
+8       ./.git/objects/8b
+24      ./.git/objects/df
+8       ./.git/objects/9f
+16      ./.git/objects/7c
+24      ./.git/objects/b9
+20      ./.git/objects/16
+12      ./.git/objects/c9
+28      ./.git/objects/e3
+40      ./.git/objects/b7
+40      ./.git/objects/f1
+28      ./.git/objects/e5
+8       ./.git/objects/da
+28      ./.git/objects/d3
+20      ./.git/objects/a9
+24      ./.git/objects/c2
+28      ./.git/objects/71
+12      ./.git/objects/79
+24      ./.git/objects/41
+44      ./.git/objects/4f
+40      ./.git/objects/ff
+24      ./.git/objects/fa
+24      ./.git/objects/7e
+12      ./.git/objects/f3
+20      ./.git/objects/03
+36      ./.git/objects/cd
+28      ./.git/objects/17
+8       ./.git/objects/c1
+12      ./.git/objects/cf
+12      ./.git/objects/2d
+20      ./.git/objects/1a
+32      ./.git/objects/cb
+16      ./.git/objects/fe
+36      ./.git/objects/11
+48      ./.git/objects/1c
+8       ./.git/objects/9c
+44      ./.git/objects/d7
+16      ./.git/objects/ca
+24      ./.git/objects/07
+64      ./.git/objects/ac
+68      ./.git/objects/20
+16      ./.git/objects/92
+16      ./.git/objects/54
+20      ./.git/objects/67
+20      ./.git/objects/c0
+32      ./.git/objects/72
+8       ./.git/objects/c8
+20      ./.git/objects/af
+36      ./.git/objects/bf
+44      ./.git/objects/7f
+20      ./.git/objects/0b
+16      ./.git/objects/02
+36      ./.git/objects/0e
+28      ./.git/objects/cc
+48      ./.git/objects/d5
+8       ./.git/objects/5c
+20      ./.git/objects/74
+44      ./.git/objects/b8
+8       ./.git/objects/31
+20      ./.git/objects/c6
+32      ./.git/objects/2a
+20      ./.git/objects/a2
+20      ./.git/objects/6e
+32      ./.git/objects/57
+32      ./.git/objects/f4
+24      ./.git/objects/1f
+28      ./.git/objects/ab
+16      ./.git/objects/18
+20      ./.git/objects/3a
+20      ./.git/objects/84
+8       ./.git/objects/6f
+24      ./.git/objects/b2
+16      ./.git/objects/65
+20      ./.git/objects/35
+16      ./.git/objects/05
+60      ./.git/objects/eb
+28      ./.git/objects/69
+20      ./.git/objects/52
+16      ./.git/objects/10
+24      ./.git/objects/42
+12      ./.git/objects/86
+20      ./.git/objects/e0
+16      ./.git/objects/90
+16      ./.git/objects/4a
+20      ./.git/objects/8f
+24      ./.git/objects/fc
+16      ./.git/objects/ee
+16      ./.git/objects/50
+40      ./.git/objects/6a
+12      ./.git/objects/9e
+8       ./.git/objects/36
+72      ./.git/objects/f2
+12      ./.git/objects/d1
+1828    ./.git/objects/pack
+20      ./.git/objects/0c
+16      ./.git/objects/19
+20      ./.git/objects/47
+28      ./.git/objects/de
+16      ./.git/objects/58
+48      ./.git/objects/be
+24      ./.git/objects/a7
+32      ./.git/objects/dd
+20      ./.git/objects/29
+24      ./.git/objects/04
+24      ./.git/objects/0f
+32      ./.git/objects/e9
+12      ./.git/objects/7d
+28      ./.git/objects/83
+28      ./.git/objects/34
+8       ./.git/objects/6c
+28      ./.git/objects/2f
+12      ./.git/objects/13
+48      ./.git/objects/f6
+24      ./.git/objects/3e
+16      ./.git/objects/3b
+16      ./.git/objects/12
+32      ./.git/objects/73
+40      ./.git/objects/14
+24      ./.git/objects/81
+20      ./.git/objects/7a
+28      ./.git/objects/82
+28      ./.git/objects/62
+8       ./.git/objects/30
+20      ./.git/objects/08
+12      ./.git/objects/ad
+16      ./.git/objects/22
+16      ./.git/objects/8d
+36      ./.git/objects/1e
+20      ./.git/objects/26
+8       ./.git/objects/ce
+60      ./.git/objects/e7
+36      ./.git/objects/89
+44      ./.git/objects/48
+24      ./.git/objects/fb
+12      ./.git/objects/dc
+12      ./.git/objects/a3
+32      ./.git/objects/f5
+20      ./.git/objects/a5
+24      ./.git/objects/44
+24      ./.git/objects/d0
+16      ./.git/objects/ba
+16      ./.git/objects/70
+16      ./.git/objects/32
+44      ./.git/objects/61
+12      ./.git/objects/2c
+8       ./.git/objects/6d
+12      ./.git/objects/28
+20      ./.git/objects/33
+20      ./.git/objects/78
+12      ./.git/objects/23
+16      ./.git/objects/77
+8       ./.git/objects/0a
+12      ./.git/objects/88
+28      ./.git/objects/24
+52      ./.git/objects/49
+16      ./.git/objects/f8
+24      ./.git/objects/4e
+20      ./.git/objects/f0
+32      ./.git/objects/b5
+28      ./.git/objects/b1
+40      ./.git/objects/9d
+28      ./.git/objects/87
+8       ./.git/objects/b3
+24      ./.git/objects/b0
+20      ./.git/objects/8e
+36      ./.git/objects/5a
+12      ./.git/objects/3d
+40      ./.git/objects/2e
+12      ./.git/objects/63
+20      ./.git/objects/d6
+16      ./.git/objects/d9
+28      ./.git/objects/98
+20      ./.git/objects/aa
+12      ./.git/objects/15
+16      ./.git/objects/f7
+12      ./.git/objects/56
+24      ./.git/objects/bb
+20      ./.git/objects/46
+20      ./.git/objects/96
+24      ./.git/objects/39
+32      ./.git/objects/38
+12      ./.git/objects/2b
+28      ./.git/objects/85
+12      ./.git/objects/4c
+8       ./.git/objects/b4
+12      ./.git/objects/a0
+20      ./.git/objects/43
+44      ./.git/objects/ec
+32      ./.git/objects/d2
+48      ./.git/objects/c5
+12      ./.git/objects/00
+40      ./.git/objects/ae
+8       ./.git/objects/ed
+28      ./.git/objects/c3
+20      ./.git/objects/97
+24      ./.git/objects/40
+8       ./.git/objects/53
+20      ./.git/objects/5b
+16      ./.git/objects/66
+16      ./.git/objects/c4
+16      ./.git/objects/75
+40      ./.git/objects/3c
+16      ./.git/objects/a1
+24      ./.git/objects/9b
+24      ./.git/objects/4b
+20      ./.git/objects/93
+24      ./.git/objects/6b
+24      ./.git/objects/a6
+28      ./.git/objects/5d
+28      ./.git/objects/8a
+4       ./.git/objects/info
+8       ./.git/objects/1d
+20      ./.git/objects/b6
+28      ./.git/objects/3f
+24      ./.git/objects/45
+40      ./.git/objects/e1
+36      ./.git/objects/68
+24      ./.git/objects/5f
+16      ./.git/objects/99
+16      ./.git/objects/f9
+12      ./.git/objects/e6
+7664    ./.git/objects
+68      ./.git/hooks
+16      ./.git/logs/refs/remotes/origin
+20      ./.git/logs/refs/remotes
+12      ./.git/logs/refs/heads
+36      ./.git/logs/refs
+48      ./.git/logs
+4       ./.git/lfs/tmp
+8       ./.git/lfs
+8       ./.git/info
+7948    ./.git
+15584   .
 
    ```
 
@@ -363,7 +684,15 @@ Linux codespaces-48772a 6.5.0-1021-azure #22~22.04.1-Ubuntu SMP Tue Apr 30 16:08
 ```
 12. What is the available disk space mounted on /workspace. ***(1 mark)*** 
 ```bash
-20807060 KB
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          32G   13G   18G  41% /
+tmpfs            64M     0   64M   0% /dev
+shm              64M     0   64M   0% /dev/shm
+/dev/root        29G   24G  5.9G  80% /vscode
+/dev/sdb1        44G   88K   42G   1% /tmp
+/dev/loop3       32G   13G   18G  41% /workspaces
+
+Answer: 18G
 ```
 13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** 
 ```bash
@@ -371,13 +700,14 @@ Linux codespaces-48772a 6.5.0-1021-azure #22~22.04.1-Ubuntu SMP Tue Apr 30 16:08
 ```
 14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** 
 ```bash
-ls :List only the visible files
-and ls -asl : List all of the files including the hidden ones . - a (all) , -s (size) and -l (long format) files .
+ls : List only the visible files. Provides a list of files and directories in the current directory without giving any additional details. 
+
+ls -asl : List all of the files including the hidden ones . - a (all) , -s (size) and -l (long format) files. ls -asl command lists all entries, including hidden files and directories.
 ```
 15. What is the TLB size of the Virtual CPU. ***(1 mark)*** 
 ```bash
-Processor 0:  2560 4K pages
-Processor 1:  2560 4K pages
+Processor 0 :  2560 4K pages
+Processor 1 :  2560 4K pages
 ```
 16. What is the CPU speed of the Virtual CPU. ***(1 mark)***
 ```bash
@@ -397,6 +727,20 @@ docker pull debian
 docker run --detach -it debian
 ```
 
+OUTPUT
+```bash
+@marziq ➜ /workspaces/OSProject (main) $ docker pull debian
+Using default tag: latest
+latest: Pulling from library/debian
+Digest: sha256:a92ed51e0996d8e9de041ca05ce623d2c491444df6a535a566dabd5cb8336946
+Status: Image is up to date for debian:latest
+docker.io/library/debian:latest
+@marziq ➜ /workspaces/OSProject (main) $ docker run --detach -it debian
+]\317b3827581f02c2956ab5fc8aca3e73d8c19c12b6772ce76b61d8cdf861b29d
+@marziq ➜ /workspaces/OSProject (main) $ ]
+```
+
+
 2. This will run the debian container. To check if the debian container is running, type
 ```bash
 @joeynor ➜ /workspaces/OSProject (main) $ docker ps -a
@@ -404,11 +748,41 @@ CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS         PORTS     NAME
 f65be1987f84   debian    "bash"    4 minutes ago   Up 4 minutes             romantic_jackson
 ```
 
+OUTPUT
+```bash
+@marziq ➜ /workspaces/OSProject (main) $ docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS                        PORTS                                       NAMES
+317b3827581f   debian         "bash"                   2 minutes ago   Up 2 minutes                                                              festive_moore
+b1552e1b322e   debian         "bash"                   3 hours ago     Exited (255) 11 minutes ago                                               dreamy_merkle
+f067465b6d76   debian         "bash"                   3 hours ago     Exited (255) 11 minutes ago                                               stoic_nash
+4f6c811eabec   debian         "bash"                   3 days ago      Exited (137) 3 days ago                                                   elegant_carver
+16faa38612d5   nodejs-app     "docker-entrypoint.s…"   2 weeks ago     Exited (255) 2 weeks ago      0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   nodejs-container
+670e22c744a8   mysql:latest   "docker-entrypoint.s…"   2 weeks ago     Exited (255) 2 weeks ago      3306/tcp, 33060/tcp                         mysql-container
+8aa85d830151   busybox        "sh"                     2 weeks ago     Exited (255) 2 weeks ago                                                  c2
+b463472d6366   busybox        "sh"                     2 weeks ago     Exited (255) 2 weeks ago                                                  c1
+bbc5a9f2ac5e   httpd          "httpd-foreground"       2 weeks ago     Exited (255) 2 weeks ago      0.0.0.0:8080->80/tcp, :::8080->80/tcp       nice_jang
+0a33c583825a   httpd          "httpd-foreground"       2 weeks ago     Created                                                                   jovial_haibt
+458aa3171848   httpd          "httpd-foreground"       2 weeks ago     Exited (0) 2 weeks ago                                                    sad_wright
+8be598e57a98   httpd          "httpd-foreground"       2 weeks ago     Exited (0) 2 weeks ago                                                    festive_snyder
+044aad6b3c49   httpd          "httpd-foreground"       2 weeks ago     Exited (0) 2 weeks ago                                                    affectionate_goldstine
+8489dbee198e   httpd          "httpd-foreground"       2 weeks ago     Created                                                                   great_brown
+f941d503da96   httpd          "httpd-foreground"       2 weeks ago     Created                                                                   charming_snyder
+9db3aa412d77   httpd          "httpd-foreground"       2 weeks ago     Created                                                                   recursing_carver
+a0c6afd8fdcf   httpd          "httpd-foreground"       2 weeks ago     Exited (0) 2 weeks ago                                                    relaxed_lederberg
+be68176069a7   5027089adc4c   "bash"                   2 weeks ago     Exited (255) 2 weeks ago                                                  kind_austin
+4e4a5125e92a   5027089adc4c   "bash"                   3 weeks ago     Exited (255) 2 weeks ago                                                  vibrant_villani
+```
+
+
 3. Keep note of the name used by your container, this is usually given random names unless you specify your own name. Now run a bash command on the container. Make sure you use the name of your container instead of the one shown here. 
 ```bash
 docker exec -i -t romantic_jackson /bin/bash
 ```
-
+OUTPUT
+```bash
+@marziq ➜ /workspaces/OSProject (main) $ docker exec -i -t festive_moore /bin/bash
+root@317b3827581f:/# 
+```
 4. Create a file on the container. First you must make sure you are in the bash command prompt of the container. The container is new, and does not have any software other than the debian OS. To create a new file, you will need an editor installed. In the bash shell of the container, run the package manager apt-get to install nano text editor. 
 
 ```bash
@@ -421,8 +795,72 @@ root@f65be1987f84:~# cd /root
 root@f65be1987f84:~# nano helloworld.txt
 ```
 
+OUTPUT
+```bash
+root@317b3827581f:/# apt-get update
+Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8786 kB]
+Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [13.8 kB]
+Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [160 kB]
+Fetched 9214 kB in 1s (7623 kB/s)
+Reading package lists... Done
+root@317b3827581f:/# apt-get install nano
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libgpm2 libncursesw6
+Suggested packages:
+  gpm hunspell
+The following NEW packages will be installed:
+  libgpm2 libncursesw6 nano
+0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+Need to get 837 kB of archives.
+After this operation, 3339 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://deb.debian.org/debian bookworm/main amd64 libncursesw6 amd64 6.4-4 [134 kB]
+Get:2 http://deb.debian.org/debian bookworm/main amd64 nano amd64 7.2-1 [689 kB]
+Get:3 http://deb.debian.org/debian bookworm/main amd64 libgpm2 amd64 1.20.7-10+b1 [14.2 kB]
+Fetched 837 kB in 0s (18.8 MB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libncursesw6:amd64.
+(Reading database ... 6090 files and directories currently installed.)
+Preparing to unpack .../libncursesw6_6.4-4_amd64.deb ...
+Unpacking libncursesw6:amd64 (6.4-4) ...
+Selecting previously unselected package nano.
+Preparing to unpack .../archives/nano_7.2-1_amd64.deb ...
+Unpacking nano (7.2-1) ...
+Selecting previously unselected package libgpm2:amd64.
+Preparing to unpack .../libgpm2_1.20.7-10+b1_amd64.deb ...
+Unpacking libgpm2:amd64 (1.20.7-10+b1) ...
+Setting up libgpm2:amd64 (1.20.7-10+b1) ...
+Setting up libncursesw6:amd64 (6.4-4) ...
+Setting up nano (7.2-1) ...
+update-alternatives: using /bin/nano to provide /usr/bin/editor (editor) in auto mode
+update-alternatives: using /bin/nano to provide /usr/bin/pico (pico) in auto mode
+Processing triggers for libc-bin (2.36-9+deb12u7) ...
+root@317b3827581f:/# cd /root
+root@317b3827581f:~# nano hellworld.txt
+root@317b3827581f:~# 
+```
 5. Edit your helloworld.txt, create your messsage and save by typing ctrl-X. Once saved, explore using the container to see where the file is located. Then exit the shell, by typing **exit**.
 
+OUTPUT
+```bash
+root@317b3827581f:~# cat helloworld.txt
+Hello world this is my docker
+
+root@317b3827581f:~# pwd
+/root
+root@317b3827581f:~# find / -name helloworld.txt
+/root/helloworld.txt
+root@317b3827581f:~# ls
+helloorld.txt  helloworld.txt
+root@317b3827581f:~# exit
+exit
+```
 6. Stop the container and run **docker ps -a**, and restart the container again. Is your file in the container still available?
 ```bash 
 @joeynor ➜ /workspaces/OSProject (main) $ docker stop romantic_jackson
@@ -433,6 +871,72 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 
 @joeynor ➜ /workspaces/OSProject (main) $ docker restart romantic_jackson
 ```
+
+OUTPUT
+```bash
+@marziq ➜ /workspaces/OSProject (main) $ docker stop festive_moore
+festive_moore
+@marziq ➜ /workspaces/OSProject (main) $ docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS                        PORTS                                       NAMES
+317b3827581f   debian         "bash"                   8 minutes ago   Exited (137) 15 seconds ago                                               festive_moore
+b1552e1b322e   debian         "bash"                   3 hours ago     Exited (255) 18 minutes ago                                               dreamy_merkle
+f067465b6d76   debian         "bash"                   3 hours ago     Exited (255) 18 minutes ago                                               stoic_nash
+4f6c811eabec   debian         "bash"                   4 days ago      Exited (137) 4 days ago                                                   elegant_carver
+16faa38612d5   nodejs-app     "docker-entrypoint.s…"   2 weeks ago     Exited (255) 2 weeks ago      0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   nodejs-container
+670e22c744a8   mysql:latest   "docker-entrypoint.s…"   2 weeks ago     Exited (255) 2 weeks ago      3306/tcp, 33060/tcp                         mysql-container
+8aa85d830151   busybox        "sh"                     2 weeks ago     Exited (255) 2 weeks ago                                                  c2
+b463472d6366   busybox        "sh"                     2 weeks ago     Exited (255) 2 weeks ago                                                  c1
+bbc5a9f2ac5e   httpd          "httpd-foreground"       2 weeks ago     Exited (255) 2 weeks ago      0.0.0.0:8080->80/tcp, :::8080->80/tcp       nice_jang
+0a33c583825a   httpd          "httpd-foreground"       2 weeks ago     Created                                                                   jovial_haibt
+458aa3171848   httpd          "httpd-foreground"       2 weeks ago     Exited (0) 2 weeks ago                                                    sad_wright
+8be598e57a98   httpd          "httpd-foreground"       2 weeks ago     Exited (0) 2 weeks ago                                                    festive_snyder
+044aad6b3c49   httpd          "httpd-foreground"       2 weeks ago     Exited (0) 2 weeks ago                                                    affectionate_goldstine
+8489dbee198e   httpd          "httpd-foreground"       2 weeks ago     Created                                                                   great_brown
+f941d503da96   httpd          "httpd-foreground"       2 weeks ago     Created                                                                   charming_snyder
+9db3aa412d77   httpd          "httpd-foreground"       2 weeks ago     Created                                                                   recursing_carver
+a0c6afd8fdcf   httpd          "httpd-foreground"       2 weeks ago     Exited (0) 2 weeks ago                                                    relaxed_lederberg
+be68176069a7   5027089adc4c   "bash"                   2 weeks ago     Exited (255) 2 weeks ago                                                  kind_austin
+4e4a5125e92a   5027089adc4c   "bash"                   3 weeks ago     Exited (255) 2 weeks ago                                                  vibrant_villani
+@marziq ➜ /workspaces/OSProject (main) $ docker restart festive_moore
+festive_moore
+
+@marziq ➜ /workspaces/OSProject (main) $ cat /root/helloworld.txt
+cat: /root/helloworld.txt: Permission denied
+@marziq ➜ /workspaces/OSProject (main) $ docker exec -i -t festive_moore /bin/bash
+root@317b3827581f:/# cd /root
+root@317b3827581f:~# ls
+helloorld.txt  helloworld.txt
+root@317b3827581f:~# cat helloworld.txt
+Hello world this is my docker
+
+root@317b3827581f:~# exit
+exit
+@marziq ➜ /workspaces/OSProject (main) $ docker stop festive_moore
+festive_moore
+@marziq ➜ /workspaces/OSProject (main) $ docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                        PORTS                                       NAMES
+317b3827581f   debian         "bash"                   12 minutes ago   Exited (137) 23 seconds ago                                               festive_moore
+b1552e1b322e   debian         "bash"                   3 hours ago      Exited (255) 22 minutes ago                                               dreamy_merkle
+f067465b6d76   debian         "bash"                   3 hours ago      Exited (255) 22 minutes ago                                               stoic_nash
+4f6c811eabec   debian         "bash"                   4 days ago       Exited (137) 4 days ago                                                   elegant_carver
+16faa38612d5   nodejs-app     "docker-entrypoint.s…"   2 weeks ago      Exited (255) 2 weeks ago      0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   nodejs-container
+670e22c744a8   mysql:latest   "docker-entrypoint.s…"   2 weeks ago      Exited (255) 2 weeks ago      3306/tcp, 33060/tcp                         mysql-container
+8aa85d830151   busybox        "sh"                     2 weeks ago      Exited (255) 2 weeks ago                                                  c2
+b463472d6366   busybox        "sh"                     2 weeks ago      Exited (255) 2 weeks ago                                                  c1
+bbc5a9f2ac5e   httpd          "httpd-foreground"       2 weeks ago      Exited (255) 2 weeks ago      0.0.0.0:8080->80/tcp, :::8080->80/tcp       nice_jang
+0a33c583825a   httpd          "httpd-foreground"       2 weeks ago      Created                                                                   jovial_haibt
+458aa3171848   httpd          "httpd-foreground"       2 weeks ago      Exited (0) 2 weeks ago                                                    sad_wright
+8be598e57a98   httpd          "httpd-foreground"       2 weeks ago      Exited (0) 2 weeks ago                                                    festive_snyder
+044aad6b3c49   httpd          "httpd-foreground"       2 weeks ago      Exited (0) 2 weeks ago                                                    affectionate_goldstine
+8489dbee198e   httpd          "httpd-foreground"       2 weeks ago      Created                                                                   great_brown
+f941d503da96   httpd          "httpd-foreground"       2 weeks ago      Created                                                                   charming_snyder
+9db3aa412d77   httpd          "httpd-foreground"       2 weeks ago      Created                                                                   recursing_carver
+a0c6afd8fdcf   httpd          "httpd-foreground"       2 weeks ago      Exited (0) 2 weeks ago                                                    relaxed_lederberg
+be68176069a7   5027089adc4c   "bash"                   2 weeks ago      Exited (255) 2 weeks ago                                                  kind_austin
+4e4a5125e92a   5027089adc4c   "bash"                   3 weeks ago      Exited (255) 2 weeks ago                                                  vibrant_villani
+@marziq ➜ /workspaces/OSProject (main) $ 
+```
+ANSWER : Yes, the file in the container still available.
 
 7. Stop the container and delete the container. What happened to your helloworld.txt?
 
@@ -446,6 +950,34 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 @joeynor ➜ /workspaces/OSProject (main) $ docker rm romantic_jackson
 ```
 
+OUTPUT
+```bash
+@marziq ➜ /workspaces/OSProject (main) $ docker rm festive_moore
+festive_moore
+@marziq ➜ /workspaces/OSProject (main) $ docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED       STATUS                        PORTS                                       NAMES
+b1552e1b322e   debian         "bash"                   3 hours ago   Exited (255) 23 minutes ago                                               dreamy_merkle
+f067465b6d76   debian         "bash"                   3 hours ago   Exited (255) 23 minutes ago                                               stoic_nash
+4f6c811eabec   debian         "bash"                   4 days ago    Exited (137) 4 days ago                                                   elegant_carver
+16faa38612d5   nodejs-app     "docker-entrypoint.s…"   2 weeks ago   Exited (255) 2 weeks ago      0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   nodejs-container
+670e22c744a8   mysql:latest   "docker-entrypoint.s…"   2 weeks ago   Exited (255) 2 weeks ago      3306/tcp, 33060/tcp                         mysql-container
+8aa85d830151   busybox        "sh"                     2 weeks ago   Exited (255) 2 weeks ago                                                  c2
+b463472d6366   busybox        "sh"                     2 weeks ago   Exited (255) 2 weeks ago                                                  c1
+bbc5a9f2ac5e   httpd          "httpd-foreground"       2 weeks ago   Exited (255) 2 weeks ago      0.0.0.0:8080->80/tcp, :::8080->80/tcp       nice_jang
+0a33c583825a   httpd          "httpd-foreground"       2 weeks ago   Created                                                                   jovial_haibt
+458aa3171848   httpd          "httpd-foreground"       2 weeks ago   Exited (0) 2 weeks ago                                                    sad_wright
+8be598e57a98   httpd          "httpd-foreground"       2 weeks ago   Exited (0) 2 weeks ago                                                    festive_snyder
+044aad6b3c49   httpd          "httpd-foreground"       2 weeks ago   Exited (0) 2 weeks ago                                                    affectionate_goldstine
+8489dbee198e   httpd          "httpd-foreground"       2 weeks ago   Created                                                                   great_brown
+f941d503da96   httpd          "httpd-foreground"       2 weeks ago   Created                                                                   charming_snyder
+9db3aa412d77   httpd          "httpd-foreground"       2 weeks ago   Created                                                                   recursing_carver
+a0c6afd8fdcf   httpd          "httpd-foreground"       2 weeks ago   Exited (0) 2 weeks ago                                                    relaxed_lederberg
+be68176069a7   5027089adc4c   "bash"                   2 weeks ago   Exited (255) 2 weeks ago                                                  kind_austin
+4e4a5125e92a   5027089adc4c   "bash"                   3 weeks ago   Exited (255) 3 weeks ago                                                  vibrant_villani
+@marziq ➜ /workspaces/OSProject (main) $ 
+```
+ANSWER : The modifications done inside the container including the generation of helloworld.txt will be erased once the container being stop and deleted.
+
 ***Questions:***
 
 1. Are files in the container persistent. Why not?. ***(1 mark)*** 
@@ -455,7 +987,7 @@ No, files in a container are not persistent because containers reset every time 
 ```
 2. Can we run two, or three instances of debian linux? . ***(1 mark)*** 
 ```bash
-Yes.
+Yes. Every container has its own file system, processes and operates independently. Based on the Debian image, many containers can be construct, each will run a separate instance of Debian Linux.
 ```
 
 ## Running your own container with persistent storage
@@ -494,10 +1026,14 @@ The file helloNice.txt is owned by the root user and belongs to the root group w
 ```
 2. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. ***(2 mark)***
 ```bash
+
 //use sudo and chown
 sudo chown -R codespace:codespace myroot
 
 ```
+
+ANSWER : Yes, we can change the permission of the files to user codespace.
+
 ```bash
 root@f067465b6d76:~# adduser codespace
 Adding user `codespace' ...
@@ -526,7 +1062,6 @@ Adding new user `codespace' to supplemental / extra groups `users' ...
 Adding user `codespace' to group `users' ...
 ```
 
-Yes, we can change the permission of the files to user codespace.
 ```bash
 root@f067465b6d76:/# chown -R codespace:codespace /root
 root@f067465b6d76:/# ls -1 /root
