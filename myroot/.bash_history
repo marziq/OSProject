@@ -18,3 +18,8 @@ adduser codespace
 sudo chown -R codespace:codespace myroot
 chown -R codespace:codespace /root/myroot
 exit
+adduser codespace
+chown -R codespace:codespace /root/myroot
+chown -R codespace:codespace /root
+ls -1 /root
+exit
