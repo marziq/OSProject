@@ -1211,18 +1211,23 @@ docker run -itd --net rednet --name c2 busybox sh
 
 1. Describe what is busybox and what is command switch **--name** is for? . ***(2 mark)*** 
 ```bash
-Busybox provides several Unix utilities in a single executable file. The --name switch is a common option used in various command-line tools to specify a custom name for something being created or referred to.
+BusyBox : BusyBox is a single binary that provides simplified versions of many standard UNIX utilities. It is commonly used in Docker containers due to its small size and ability to provide a functional Linux environment in a minimal footprint.
+
+--name : This command switch in Docker is used to assign a name to a container. It allows you to specify a custom, human-readable name instead of relying on Docker's default naming convention, which uses random words or number
 ```
 
 2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)*** 
 ```bash
 @marziq ➜ /workspaces/OSProject (main) $ docker network ls
-NETWORK ID     NAME      DRIVER    SCOPE
-81994accbfc1   bluenet   bridge    local
-35d5775fe100   bridge    bridge    local
-6750144f8721   host      host      local
-08b6a5c9336c   none      null      local
-c88624d6a0d1   rednet    bridge    local
+NETWORK ID     NAME        DRIVER    SCOPE
+a43ab620e1cb   bluenet     bridge    local
+7468fd238c7a   bridge      bridge    local
+8c1bec473dcb   bridgenet   bridge    local
+6750144f8721   host        host      local
+2c5233b24c0e   mysqlnet    bridge    local
+74b18fbb5a7b   nodejsnet   bridge    local
+08b6a5c9336c   none        null      local
+55e8149ecd12   rednet      bridge    local
 ```
 
 3. Using ```docker inspect c1``` and ```docker inspect c2``` inscpect the two network. What is the gateway of bluenet and rednet.? ***(1 mark)*** 
@@ -1239,8 +1244,12 @@ C2 : 172.19.0.2
 
 5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** 
 ```bash
+No, I cannot ping C1 to C2
+
+OUTPUT : 
 @marziq ➜ /workspaces/OSProject (main) $ docker exec c1 ping c2
 ping: bad address 'c2'
+
 ```
 
 ## Bridging two SUB Networks
@@ -1251,19 +1260,35 @@ docker network connect bridgenet c1
 docker network connect bridgenet c2
 docker exec c1 ping c2
 ```
+OUTPUT
+
+```bash
+@marziq ➜ /workspaces/OSProject (main) $ docker network create bridgenet
+2ac5a077371e789db9db28e863de3f25b37248444d9f6c4d7e01213600503ae8
+@marziq ➜ /workspaces/OSProject (main) $ docker network connect bridgenet c1
+@marziq ➜ /workspaces/OSProject (main) $ docker network connect bridgenet c2
+@marziq ➜ /workspaces/OSProject (main) $ docker exec c1 ping c2
+```
+
 ***Questions:***
 
 1. Are you able to ping? Show your output . ***(1 mark)*** 
 ```bash
 @marziq ➜ /workspaces/OSProject (main) $ docker exec c1 ping c2
 PING c2 (172.20.0.3): 56 data bytes
-64 bytes from 172.20.0.3: seq=0 ttl=64 time=0.081 ms
-64 bytes from 172.20.0.3: seq=1 ttl=64 time=0.142 ms
-64 bytes from 172.20.0.3: seq=2 ttl=64 time=0.073 ms
-64 bytes from 172.20.0.3: seq=3 ttl=64 time=0.084 ms
-64 bytes from 172.20.0.3: seq=4 ttl=64 time=0.117 ms
+64 bytes from 172.20.0.3: seq=0 ttl=64 time=0.159 ms
+64 bytes from 172.20.0.3: seq=1 ttl=64 time=0.070 ms
+64 bytes from 172.20.0.3: seq=2 ttl=64 time=0.069 ms
+64 bytes from 172.20.0.3: seq=3 ttl=64 time=0.072 ms
+64 bytes from 172.20.0.3: seq=4 ttl=64 time=0.059 ms
+64 bytes from 172.20.0.3: seq=5 ttl=64 time=0.069 ms
+64 bytes from 172.20.0.3: seq=6 ttl=64 time=0.069 ms
+64 bytes from 172.20.0.3: seq=7 ttl=64 time=0.085 ms
+64 bytes from 172.20.0.3: seq=8 ttl=64 time=0.062 ms
+64 bytes from 172.20.0.3: seq=9 ttl=64 time=0.065 ms
 ...
 ```
+
 2. What is different from the previous ping in the section above? ***(1 mark)*** 
 ```bash
 In previous ping, we could not ping because we have not yet bridge the network.
@@ -1279,6 +1304,13 @@ This guide will help you set up a simple Node.js website that retrieves a random
 Create a Docker network to for the two containers.
 For mysql, call it **mysqlnet** for nodejs call it **nodejsnet** .
 
+OUTPUT
+```bash
+@marziq ➜ /workspaces/OSProject (main) $ docker network create nodejsnet
+9379a8631fca0dbec61895292abe5e377fd8e1dc18b15f5e5badb4eebc80edf2
+@marziq ➜ /workspaces/OSProject (main) $ docker network create mysqlnet
+70656e7d2a3a0f3472448722b75f66342d3031b27f295cd9440e858caa1b8952
+```
 #### Step 2: Set Up the MySQL Container
 
 Run a MySQL container on the created network.
@@ -1297,6 +1329,39 @@ docker run --name mysql-container --network mysqlnet -e MYSQL_ROOT_PASSWORD=root
     npm init -y
     npm install express mysql
     ```
+
+    OUTPUT
+```bash
+    @marziq ➜ /workspaces/OSProject (main) $ mkdir nodejs-app
+tall express mysql
+@marziq ➜ /workspaces/OSProject (main) $ cd nodejs-app
+@marziq ➜ /workspaces/OSProject/nodejs-app (main) $ npm init -y
+
+Wrote to /workspaces/OSProject/nodejs-app/package.json:
+
+{
+  "name": "nodejs-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+
+@marziq ➜ /workspaces/OSProject/nodejs-app (main) $ npm install express mysql
+
+added 76 packages, and audited 77 packages in 11s
+
+12 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+```
 
 2. **Create a file named `index.js` with the following content:**
 
@@ -1364,7 +1429,10 @@ docker run --name mysql-container --network mysqlnet -e MYSQL_ROOT_PASSWORD=root
     # Run the web service on container startup
     CMD [ "node", "index.js" ]
     ```
-
+OUTPUT
+```bash
+@marziq ➜ /workspaces/OSProject/nodejs-app (main) $ nano Dockerfile
+```
 #### Step 4: Build and Run the Node.js Container
 
 1. **Build the Docker image for the Node.js application.**
@@ -1372,12 +1440,39 @@ docker run --name mysql-container --network mysqlnet -e MYSQL_ROOT_PASSWORD=root
     ```sh
     docker build -t nodejs-app .
     ```
+OUTPUT
+```bash
+@marziq ➜ /workspaces/OSProject/nodejs-app (main) $ docker build -t nodejs-app .
+[+] Building 15.1s (11/11) FINISHED                                                                                         docker:default
+ => [internal] load build definition from Dockerfile                                                                                  0.1s
+ => => transferring dockerfile: 407B                                                                                                  0.0s
+ => [internal] load metadata for docker.io/library/node:14                                                                            1.8s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                           0.0s
+ => [internal] load .dockerignore                                                                                                     0.0s
+ => => transferring context: 2B                                                                                                       0.0s
+ => [1/5] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59bbce5744d2f6fd8461aa                      0.0s
+ => [internal] load build context                                                                                                     0.2s
+ => => transferring context: 3.36MB                                                                                                   0.2s
+ => CACHED [2/5] WORKDIR /usr/src/app                                                                                                 0.0s
+ => [3/5] COPY package*.json ./                                                                                                       0.4s
+ => [4/5] RUN npm install                                                                                                             7.2s
+ => [5/5] COPY . .                                                                                                                    0.4s
+ => exporting to image                                                                                                                4.5s
+ => => exporting layers                                                                                                               4.4s
+ => => writing image sha256:0bfc9759f2ca459d0b8e075a9556751380526cdadf92bb494a4631c0afc762cf                                          0.0s
+ => => naming to docker.io/library/nodejs-app     
+```
 
 2. **Run the Node.js container on the same network as the MySQL container.**
 
     ```sh
     docker run --name nodejs-container --network nodejsnet -p 3000:3000 -d nodejs-app
     ```
+    OUTPUT
+```bash
+@marziq ➜ /workspaces/OSProject/nodejs-app (main) $ docker run --name nodejs-container --network nodejsnet -p 3000:3000 -d nodejs-app
+f95ceedeaf22d7b5a08f087f0d979a28eb50e6e89f7c18673b80bcbb0f234cdc
+```
 
 #### Step 5: Test the Setup
 
@@ -1385,6 +1480,13 @@ You can now test the setup by accessing the Node.js application in your browser 
 
 ```sh
 curl http://localhost:3000/random
+```
+
+OUTPUT
+
+```bash
+@marziq ➜ /workspaces/OSProject/nodejs-app (main) $ curl http://localhost:3000/random
+Server Error@marziq ➜ /workspaces/OSProject/nodejs-app (main) $ 
 ```
 
 #### Step 6: Ensure `mytable` is Populated
@@ -1403,6 +1505,63 @@ CREATE TABLE mytable (
 INSERT INTO mytable (name, value) VALUES ('example1', 'value1'), ('example2', 'value2'), ('example3', 'value3');
 ```
 
+OUTPUT
+
+```bash
+bash-5.1# mysql -uroot -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.4.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE TABLE mytable (
+    ->   id INT AUTO_INCREMENT PRIMARY KEY,
+    ->   name VARCHAR(255) NOT NULL,
+    ->   value VARCHAR(255) NOT NULL
+    -> );
+ERROR 1046 (3D000): No database selected
+mysql> USE mydatabase;
+Database changed
+mysql> CREATE TABLE mytable (
+    ->   id INT AUTO_INCREMENT PRIMARY KEY,
+    ->   name VARCHAR(255) NOT NULL,
+    ->   value VARCHAR(255) NOT NULL
+    -> );
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_mydatabase |
++----------------------+
+| mytable              |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO mytable (name, value) VALUES
+    ->   ('example1', 'value1'),
+    ->   ('example2', 'value2'),
+    ->   ('example3', 'value3');
+Query OK, 3 rows affected (0.04 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM mytable;
++----+----------+--------+
+| id | name     | value  |
++----+----------+--------+
+|  1 | example1 | value1 |
+|  2 | example2 | value2 |
+|  3 | example3 | value3 |
++----+----------+--------+
+3 rows in set (0.00 sec)
+```
 ### Summary
 
 You have now set up a Node.js application in a Docker container on nodejsnet netowrk and a MySQL database in another Docker container on mysqlnet network. Now bridge the two network together.
@@ -1414,7 +1573,25 @@ You have now set up a Node.js application in a Docker container on nodejsnet net
 @marziq ➜ /workspaces/OSProject/nodejs-app (main) $ curl http://localhost:3000/random
 Server Error@marziq ➜ /workspaces/OSProject/nodejs-app (main) $
 
-There are server error.
+The output Server Error from the curl command when accessing http://localhost:3000/random indicates that there was an error while processing the request in your Node.js application
+
+Connection Error with MySQL:
+
+The Node.js application (index.js) connects to the MySQL database (mysql-container) to retrieve a random row from the mytable.
+If the MySQL container (mysql-container) is not running or if there is a network connectivity issue between the Node.js container (nodejs-container) and the MySQL container, the connection attempt will fail.
+This failure could result in an error being thrown when attempting to execute the MySQL query, causing a Server Error response.
+MySQL Container Status:
+
+Ensure that the MySQL container (mysql-container) is running and accessible from the Node.js container (nodejs-container).
+You can check the status of Docker containers using docker ps to see if both containers are up and running.
+Error Handling in Node.js Application:
+
+If there's an error during the MySQL query execution in index.js, the application might respond with a generic Server Error message.
+Review the error handling in your Node.js application to log detailed error messages (console.error) and return appropriate HTTP status codes (res.status(500) for server errors).
+Check Node.js Application Logs:
+
+Inspect the logs of your Node.js application (nodejs-container) to see if there are any specific error messages that can provide more insight into what went wrong.
+Use docker logs nodejs-container to view logs from the Node.js container.
 ```
 
 2. Show the instruction needed to make this work. ***(1 mark)***
