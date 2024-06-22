@@ -1005,6 +1005,44 @@ At the terminal, create a new directory called **myroot**, and run a instance of
 @joeynor ➜ /workspaces/OSProject/myroot (main) $ docker run --detach -it -v /workspaces/OSProject/myroot:/root debian
 ```
 
+OUTPUT
+```bash
+@marziq ➜ /workspaces/OSProject (main) $ mkdir myroot
+@marziq ➜ /workspaces/OSProject (main) $ cd myroot/
+@marziq ➜ /workspaces/OSProject/myroot (main) $ pwd
+/workspaces/OSProject/myroot
+@marziq ➜ /workspaces/OSProject/myroot (main) $ --detach -it -v /workspaces/OSProject/myroot:/root debian
+bash: --detach: command not found
+@marziq ➜ /workspaces/OSProject/myroot (main) $ docker run --detach -it -v /workspaces/OSProject/myroot:/root debian
+c58712141ff3782e72064c18db07c0088992c749591a06c46853d736bb7f13ea
+@marziq ➜ /workspaces/OSProject/myroot (main) $ 
+```
+
+```bash
+@marziq ➜ /workspaces/OSProject/myroot (main) $ docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                        PORTS                                       NAMES
+c58712141ff3   debian         "bash"                   40 seconds ago   Up 39 seconds                                                             flamboyant_sanderson
+b1552e1b322e   debian         "bash"                   3 hours ago      Exited (255) 34 minutes ago                                               dreamy_merkle
+f067465b6d76   debian         "bash"                   3 hours ago      Exited (255) 34 minutes ago                                               stoic_nash
+4f6c811eabec   debian         "bash"                   4 days ago       Exited (137) 4 days ago                                                   elegant_carver
+16faa38612d5   nodejs-app     "docker-entrypoint.s…"   2 weeks ago      Exited (255) 2 weeks ago      0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   nodejs-container
+670e22c744a8   mysql:latest   "docker-entrypoint.s…"   2 weeks ago      Exited (255) 2 weeks ago      3306/tcp, 33060/tcp                         mysql-container
+8aa85d830151   busybox        "sh"                     2 weeks ago      Exited (255) 2 weeks ago                                                  c2
+b463472d6366   busybox        "sh"                     2 weeks ago      Exited (255) 2 weeks ago                                                  c1
+bbc5a9f2ac5e   httpd          "httpd-foreground"       2 weeks ago      Exited (255) 2 weeks ago      0.0.0.0:8080->80/tcp, :::8080->80/tcp       nice_jang
+0a33c583825a   httpd          "httpd-foreground"       2 weeks ago      Created                                                                   jovial_haibt
+458aa3171848   httpd          "httpd-foreground"       2 weeks ago      Exited (0) 2 weeks ago                                                    sad_wright
+8be598e57a98   httpd          "httpd-foreground"       2 weeks ago      Exited (0) 2 weeks ago                                                    festive_snyder
+044aad6b3c49   httpd          "httpd-foreground"       2 weeks ago      Exited (0) 2 weeks ago                                                    affectionate_goldstine
+8489dbee198e   httpd          "httpd-foreground"       2 weeks ago      Created                                                                   great_brown
+f941d503da96   httpd          "httpd-foreground"       2 weeks ago      Created                                                                   charming_snyder
+9db3aa412d77   httpd          "httpd-foreground"       2 weeks ago      Created                                                                   recursing_carver
+a0c6afd8fdcf   httpd          "httpd-foreground"       3 weeks ago      Exited (0) 2 weeks ago                                                    relaxed_lederberg
+be68176069a7   5027089adc4c   "bash"                   3 weeks ago      Exited (255) 2 weeks ago                                                  kind_austin
+4e4a5125e92a   5027089adc4c   "bash"                   3 weeks ago      Exited (255) 3 weeks ago                                                  vibrant_villani
+@marziq ➜ /workspaces/OSProject/myroot (main) $ docker exec -i -t flamboyant_sanderson /bin/bash
+root@c58712141ff3:/# 
+```
 ***Questions:***
 
 1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** 
@@ -1024,6 +1062,44 @@ Group: root
 The file helloNice.txt is owned by the root user and belongs to the root group within the Docker container
 
 ```
+
+OUTPUT
+```bash
+root@c58712141ff3:~# cd /root
+root@c58712141ff3:~# nano helloNice.txt 
+root@c58712141ff3:~# cat helloNice.txt 
+Hello Niceeeee
+root@c58712141ff3:~# ls -l /root/helloNice.txt
+-rw-rw-rw- 1 root root 15 Jun 22 13:49 /root/helloNice.txt
+root@c58712141ff3:~# 
+```
+
+```bash
+ANSWER : The output -rw-rw-rw- 1 root root 15 Jun 22 13:49 /root/helloNice.txt can be broken down as follows:
+
+-rw-rw-rw- : These are the permissions for the file. In this case, it indicates that the file is readable and writeable for all users (owner, group and others)
+
+1 : This indicates the number of hard links to the file
+
+root : The first occurrence of root indicates the user who owns the file. In this case, it's owned by the root user.
+
+root : The second occurrence of root indicates the group to which the file belongs. In this case, it's assigned to the root group
+
+15 : This represents the file size in bytes.
+
+Jun 22 13:49 : This indicates the date and time when the file was last modified.
+
+/root/helloNice.txt : This is the path to the file.
+
+Therefore, based on the provided information:
+
+User: root
+
+Group: root
+
+The file helloNice.txt is owned by the root user and belongs to the root group within the Docker container.
+```
+
 2. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. ***(2 mark)***
 ```bash
 
@@ -1035,7 +1111,7 @@ sudo chown -R codespace:codespace myroot
 ANSWER : Yes, we can change the permission of the files to user codespace.
 
 ```bash
-root@f067465b6d76:~# adduser codespace
+root@c58712141ff3:~# adduser codespace
 Adding user `codespace' ...
 Adding new group `codespace' (1000) ...
 Adding new user `codespace' (1000) with group `codespace (1000)' ...
@@ -1043,29 +1119,25 @@ Creating home directory `/home/codespace' ...
 Copying files from `/etc/skel' ...
 New password: 
 Retype new password: 
-Sorry, passwords do not match.
-passwd: Authentication token manipulation error
-passwd: password unchanged
-Try again? [y/N] y
-New password: 
-Retype new password: 
 passwd: password updated successfully
 Changing the user information for codespace
 Enter the new value, or press ENTER for the default
-        Full Name []: marziq
-        Room Number []: 1
-        Work Phone []: 1
-        Home Phone []: 1
-        Other []: 1
-Is the information correct? [Y/n] y
+        Full Name []: Ammar
+        Room Number []: G31
+        Work Phone []: 0198389538
+        Home Phone []: 
+        Other []: 
+Is the information correct? [Y/n] Y
 Adding new user `codespace' to supplemental / extra groups `users' ...
 Adding user `codespace' to group `users' ...
+root@c58712141ff3:~# chown -R codespace:codespace /root
 ```
 
 ```bash
-root@f067465b6d76:/# chown -R codespace:codespace /root
-root@f067465b6d76:/# ls -1 /root
-helloNice.txt
+root@c58712141ff3:~# ls -l /root
+total 4
+-rw-rw-rw- 1 codespace codespace 15 Jun 22 13:49 helloNice.txt
+root@c58712141ff3:~# 
 ```
 
 ## You are on your own, create your own static webpage
