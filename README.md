@@ -8,7 +8,7 @@ Team Mates:
 1. Ammar Haziq bin Zainal 2217763
 2. Arina Batrisyia Sobhan binti Mohd Razali 2217572
 3. Adlyn Sofea binti Mohd Ariff Adika 2214042
-4. Aisha Humairah Binti Ahmad Adzuan 2219130
+4. Aisha Humairah binti Ahmad Adzuan 2219130
 
 ## Rules
 1. You are allowed to have **3 group** members. *Exception* is allowed **IFF (if and only if)** you are allowed to have 4 group members if you are a **multinational** or a **multigender** group. 
@@ -71,12 +71,12 @@ Ubuntu Linux
 
 2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** 
 ```bash
-2 cores, 8 GB RAM, and 32 GB storage
+2 cores, 8 GB RAM, and 32 GB storage.
 32 cores, 64 GB RAM, and 128 GB storage.
 ```
 3. Why must we commit and sync our current work on source control? ***(1 mark)***
 ```bash
-To ensure that all changes are saved and shared with others, allowing collaboration
+To ensure that all changes are saved and shared with others, allowing collaboration.
 ```
 
 ## Exploring the Terminal
@@ -382,7 +382,7 @@ Processor 1:  2560 4K pages
 16. What is the CPU speed of the Virtual CPU. ***(1 mark)***
 ```bash
 Processor 0 : 3244.283 Mhz
-Processor 1: 3243.903
+Processor 1 : 3243.903 Mhz
 ```
 17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** 
 ```bash
@@ -558,7 +558,7 @@ docker run -itd --net rednet --name c2 busybox sh
 
 1. Describe what is busybox and what is command switch **--name** is for? . ***(2 mark)*** 
 ```bash
-Busybox provides several Unix utilities in a single executable file. The --name switch is a common option used in various command-line tools to specify a custom name for something being created or referred to
+Busybox provides several Unix utilities in a single executable file. The --name switch is a common option used in various command-line tools to specify a custom name for something being created or referred to.
 ```
 
 2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)*** 
@@ -574,14 +574,14 @@ c88624d6a0d1   rednet    bridge    local
 
 3. Using ```docker inspect c1``` and ```docker inspect c2``` inscpect the two network. What is the gateway of bluenet and rednet.? ***(1 mark)*** 
 ```bash
-Bluenet gateway: 172.18.0.1
-Rednet gateway: 172.19.0.1
+Bluenet gateway : 172.18.0.1
+Rednet gateway  : 172.19.0.1
 ```
 
 4. What is the network address for the running container c1 and c2? ***(1 mark)*** 
 ```bash
-C1: 172.18.0.2
-C2: 172.19.0.2
+C1 : 172.18.0.2
+C2 : 172.19.0.2
 ```
 
 5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** 
@@ -759,24 +759,26 @@ You have now set up a Node.js application in a Docker container on nodejsnet net
 1. What is the output of step 5 above, explain the error? ***(1 mark)***
 ```bash
 @marziq ➜ /workspaces/OSProject/nodejs-app (main) $ curl http://localhost:3000/random
-Server Error@marziq ➜ /workspaces/OSProject/nodejs-app (main) $ 
+Server Error@marziq ➜ /workspaces/OSProject/nodejs-app (main) $
+
+There are server error.
 ```
 
 2. Show the instruction needed to make this work. ***(1 mark)***
 ```bash
-Check Node.js Application Logsr.
+1. Check Node.js Application Logsr.
 
-Verify Database Connection
+2. Verify Database Connection.
 
-Test Database Connection
+3. Test Database Connection.
 
-Check Docker Network Configuration
+4. Check Docker Network Configuration.
 
-Inspect Docker Container Logs
+5. Inspect Docker Container Logs.
 
-Review Dockerfile and Docker Container Configuration
+6. Review Dockerfile and Docker Container Configuration.
 
-Verify Database Schema and Data
+7. Verify Database Schema and Data.
 ```
 
 
