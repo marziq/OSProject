@@ -1279,8 +1279,10 @@ OUTPUT
 
 1. Are you able to ping? Show your output . ***(1 mark)*** 
 
-ANSWER : Yes, I can ping. 
 ```bash
+ANSWER : Yes, I can ping. 
+
+OUTPUT : 
 @marziq ➜ /workspaces/OSProject (main) $ docker exec c1 ping c2
 PING c2 (172.20.0.3): 56 data bytes
 64 bytes from 172.20.0.3: seq=0 ttl=64 time=0.159 ms
@@ -1606,7 +1608,7 @@ Use docker logs nodejs-container to view logs from the Node.js container.
 
 Troubleshooting Steps:
 
-Check MySQL Container Status:
+1. Check MySQL Container Status:
 
 First, verify that your MySQL container (mysql-container) is running and accessible. Use the following command to check its status:
 
@@ -1615,7 +1617,7 @@ docker ps -a
 Ensure that mysql-container is listed and has the status Up (not Exited).
 ```
 
-Verify Docker Networks:
+2. Verify Docker Networks:
 
 Confirm that both mysql-container and nodejs-container are connected to the correct Docker networks (mysqlnet and nodejsnet). You can list Docker networks with:
 
@@ -1625,7 +1627,7 @@ docker network ls
 --Check if both mysqlnet and nodejsnet exist and confirm that your containers are attached to these networks.
 ```
 
-Access MySQL Container Logs:
+3. Access MySQL Container Logs:
 
 Review the logs of your MySQL container (mysql-container) to check for any startup errors or issues:
 
@@ -1635,7 +1637,7 @@ docker logs mysql-container
 --Look for any errors related to MySQL initialization or connectivity issues.
 ```
 
-Node.js Application Configuration:
+4. Node.js Application Configuration:
 
 Ensure that your Node.js application (index.js) has the correct MySQL connection settings. Double-check the following in index.js:
 
@@ -1655,15 +1657,14 @@ const connection = mysql.createConnection({
 });
 ```
 
-Restart Node.js Container:
+5. Restart Node.js Container:
 If you made changes to index.js or if you suspect issues with the Node.js container (nodejs-container), restart it:
 
 ```bash
-Copy code
 docker restart nodejs-container
 ```
 
-Test Endpoint:
+6. Test Endpoint:
 After ensuring all configurations are correct and containers are running, test your Node.js application endpoint again using curl:
 
 ```bash
