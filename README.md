@@ -871,7 +871,10 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 @joeynor ➜ /workspaces/OSProject (main) $ docker restart romantic_jackson
 ```
 
+ANSWER : Yes, the file in the container still available.
+
 OUTPUT
+
 ```bash
 @marziq ➜ /workspaces/OSProject (main) $ docker stop festive_moore
 festive_moore
@@ -935,7 +938,7 @@ be68176069a7   5027089adc4c   "bash"                   2 weeks ago      Exited (
 4e4a5125e92a   5027089adc4c   "bash"                   3 weeks ago      Exited (255) 2 weeks ago                                                  vibrant_villani
 @marziq ➜ /workspaces/OSProject (main) $ 
 ```
-ANSWER : Yes, the file in the container still available.
+
 
 7. Stop the container and delete the container. What happened to your helloworld.txt?
 
@@ -948,6 +951,9 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 
 @joeynor ➜ /workspaces/OSProject (main) $ docker rm romantic_jackson
 ```
+
+
+ANSWER : The modifications done inside the container including the generation of helloworld.txt will be erased once the container being stop and deleted.
 
 OUTPUT
 ```bash
@@ -975,7 +981,6 @@ be68176069a7   5027089adc4c   "bash"                   2 weeks ago   Exited (255
 4e4a5125e92a   5027089adc4c   "bash"                   3 weeks ago   Exited (255) 3 weeks ago                                                  vibrant_villani
 @marziq ➜ /workspaces/OSProject (main) $ 
 ```
-ANSWER : The modifications done inside the container including the generation of helloworld.txt will be erased once the container being stop and deleted.
 
 ***Questions:***
 
@@ -1595,22 +1600,80 @@ Use docker logs nodejs-container to view logs from the Node.js container.
 ```
 
 2. Show the instruction needed to make this work. ***(1 mark)***
+
+
+Troubleshooting Steps:
+
+Check MySQL Container Status:
+
+First, verify that your MySQL container (mysql-container) is running and accessible. Use the following command to check its status:
+
 ```bash
-1. Check Node.js Application Logsr.
-
-2. Verify Database Connection.
-
-3. Test Database Connection.
-
-4. Check Docker Network Configuration.
-
-5. Inspect Docker Container Logs.
-
-6. Review Dockerfile and Docker Container Configuration.
-
-7. Verify Database Schema and Data.
+docker ps -a
+Ensure that mysql-container is listed and has the status Up (not Exited).
 ```
 
+Verify Docker Networks:
+
+Confirm that both mysql-container and nodejs-container are connected to the correct Docker networks (mysqlnet and nodejsnet). You can list Docker networks with:
+
+```bash
+docker network ls
+
+--Check if both mysqlnet and nodejsnet exist and confirm that your containers are attached to these networks.
+```
+
+Access MySQL Container Logs:
+
+Review the logs of your MySQL container (mysql-container) to check for any startup errors or issues:
+
+```bash
+
+docker logs mysql-container
+--Look for any errors related to MySQL initialization or connectivity issues.
+```
+
+Node.js Application Configuration:
+
+Ensure that your Node.js application (index.js) has the correct MySQL connection settings. Double-check the following in index.js:
+
+Hostname should be mysql-container.
+Username (myuser) and password (mypassword) should match the credentials set up in your MySQL container.
+Database name (mydatabase) should match the name of your MySQL database.
+Here’s an example of how your MySQL connection setup in index.js should look:
+
+```bash
+javascript
+
+const connection = mysql.createConnection({
+  host: 'mysql-container',
+  user: 'myuser',
+  password: 'mypassword',
+  database: 'mydatabase'
+});
+```
+
+Restart Node.js Container:
+If you made changes to index.js or if you suspect issues with the Node.js container (nodejs-container), restart it:
+
+```bash
+Copy code
+docker restart nodejs-container
+```
+
+Test Endpoint:
+After ensuring all configurations are correct and containers are running, test your Node.js application endpoint again using curl:
+
+```bash
+curl http://localhost:3000/random
+```
+
+If everything is set up correctly, you should receive a JSON response with a random row from your mytable table.
+
+Error Handling and Debugging:
+
+Ensure that your Node.js application (index.js) has proper error handling to log any errors that occur during MySQL queries or server operations.
+Add console logs or use Docker's logging facilities (docker logs nodejs-container) to debug and trace where the error is occurring.
 
 
 ## What to submit
