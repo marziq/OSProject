@@ -1278,6 +1278,8 @@ OUTPUT
 ***Questions:***
 
 1. Are you able to ping? Show your output . ***(1 mark)*** 
+
+ANSWER : Yes, I can ping. 
 ```bash
 @marziq ➜ /workspaces/OSProject (main) $ docker exec c1 ping c2
 PING c2 (172.20.0.3): 56 data bytes
