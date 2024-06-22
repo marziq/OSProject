@@ -132,8 +132,7 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
    ```
 
 3. Run the command **df** . ***(1 mark)*** 
-
-   ```bash
+ ```bash
 @marziq ➜ /workspaces/OSProject (main) $ df
 Filesystem     1K-blocks     Used Available Use% Mounted on
 overlay         32847728 12706868  18446768  41% /
@@ -142,10 +141,9 @@ shm                65536        0     65536   0% /dev/shm
 /dev/root       30298176 24196376   6085416  80% /vscode
 /dev/sdb1       46127956       88  43752292   1% /tmp
 /dev/loop3      32847728 12706868  18446768  41% /workspaces
-   ```
+```
 4. Run the command **du** . ***(1 mark)*** 
-
-   ```bash
+ ```bash
    @marziq ➜ /workspaces/OSProject (main) $ du
 16      ./nodejs-app/node_modules/string_decoder/lib
 48      ./nodejs-app/node_modules/string_decoder/node_modules/safe-buffer
@@ -575,7 +573,7 @@ shm                65536        0     65536   0% /dev/shm
 7948    ./.git
 15584   .
 
-   ```
+```
 
 5. Run the command **ls** . ***(1 mark)*** 
 
@@ -584,6 +582,7 @@ shm                65536        0     65536   0% /dev/shm
   README.md  images
   ```
 6. Run the command **ls -asl** . ***(1 mark)*** 
+
 ```bash
 @marziq ➜ /workspaces/OSProject (main) $ ls -asl
 total 40
