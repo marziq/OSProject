@@ -455,7 +455,7 @@ No, files in a container are not persistent because containers reset every time 
 ```
 2. Can we run two, or three instances of debian linux? . ***(1 mark)*** 
 ```bash
-Yes
+Yes.
 ```
 
 ## Running your own container with persistent storage
@@ -492,17 +492,6 @@ Group: root
 The file helloNice.txt is owned by the root user and belongs to the root group within the Docker container
 
 ```
-```bash
-root@f067465b6d76:~# cd /root
-root@f067465b6d76:~# nano helloNice.txt
-root@f067465b6d76:~# cat helloNice.txr
-cat: helloNice.txr: No such file or directory
-root@f067465b6d76:~# cat helloNice.txt
-Hello nice people!
-root@f067465b6d76:~# ls -1 /root/helloNice.txt
-/root/helloNice.txt
-```
-
 2. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. ***(2 mark)***
 ```bash
 //use sudo and chown
@@ -510,39 +499,10 @@ sudo chown -R codespace:codespace myroot
 
 ```
 ```bash
-root@f067465b6d76:~# adduser codespace
-Adding user `codespace' ...
-Adding new group `codespace' (1000) ...
-Adding new user `codespace' (1000) with group `codespace (1000)' ...
-Creating home directory `/home/codespace' ...
-Copying files from `/etc/skel' ...
-New password: 
-Retype new password: 
-Sorry, passwords do not match.
-passwd: Authentication token manipulation error
-passwd: password unchanged
-Try again? [y/N] y
-New password: 
-Retype new password: 
-passwd: password updated successfully
-Changing the user information for codespace
-Enter the new value, or press ENTER for the default
-        Full Name []: marziq
-        Room Number []: 1
-        Work Phone []: 1
-        Home Phone []: 1
-        Other []: 1
-Is the information correct? [Y/n] y
-Adding new user `codespace' to supplemental / extra groups `users' ...
-Adding user `codespace' to group `users' ...
+@marziq ➜ /workspaces/OSProject/myroot (main) $ sudo chown -R codespace:codespace myroot
+chown: cannot access 'myroot': No such file or directory
 ```
-Yes, we can change the permission of the files to user codespace.
 
-```bash
-root@f067465b6d76:/# chown -R codespace:codespace /root
-root@f067465b6d76:/# ls -1 /root
-helloNice.txt
-```
 ## You are on your own, create your own static webpage
 
 1. Create a directory called webpage in your host machine
