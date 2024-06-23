@@ -31,7 +31,7 @@ Team Mates:
    ```
 3. How many files and folders are in this repository. ***(1 mark)***
    ```bash
-   7 Files 1 folder
+   7 Files 1 Folder
    ```
 
 
