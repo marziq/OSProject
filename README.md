@@ -1054,22 +1054,6 @@ root@c58712141ff3:/#
 ***Questions:***
 
 1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** 
-```bash
-root@45dfee71646b:~# cd /root
-root@45dfee71646b:~# nano helloNice.txt
-root@45dfee71646b:~# cat helloNice.txt
-Hello nice people!
-root@45dfee71646b:~# ls -1 /root/helloNice.txt
-/root/helloNice.txt
-
-The output /root/helloNice.txt can be broken down as follows:
-/root/helloNice.txt: This is the path to the file.
-Therefore, based on the provided information:
-User: root
-Group: root
-The file helloNice.txt is owned by the root user and belongs to the root group within the Docker container
-
-```
 
 OUTPUT
 ```bash
@@ -1585,25 +1569,25 @@ This failure could result in an error being thrown when attempting to execute th
 MySQL Container Status:
 
 Ensure that the MySQL container (mysql-container) is running and accessible from the Node.js container (nodejs-container).
-You can check the status of Docker containers using docker ps to see if both containers are up and running.
+We can check the status of Docker containers using docker ps to see if both containers are up and running.
 Error Handling in Node.js Application:
 
 If there's an error during the MySQL query execution in index.js, the application might respond with a generic Server Error message.
-Review the error handling in your Node.js application to log detailed error messages (console.error) and return appropriate HTTP status codes (res.status(500) for server errors).
+Review the error handling in Node.js application to log detailed error messages (console.error) and return appropriate HTTP status codes (res.status(500) for server errors.
 Check Node.js Application Logs:
 
-Inspect the logs of your Node.js application (nodejs-container) to see if there are any specific error messages that can provide more insight into what went wrong.
+Inspect the logs of Node.js application (nodejs-container) to see if there are any specific error messages that can provide more insight into what went wrong.
 Use docker logs nodejs-container to view logs from the Node.js container.
 ```
 
 2. Show the instruction needed to make this work. ***(1 mark)***
 
 
-Troubleshooting Steps:
+The Troubleshooting Steps
 
 1. Check MySQL Container Status:
 
-First, verify that your MySQL container (mysql-container) is running and accessible. Use the following command to check its status:
+First, verify that MySQL container (mysql-container) is running and accessible. Use the following command to check its status:
 
 ```bash
 docker ps -a
@@ -1612,17 +1596,17 @@ Ensure that mysql-container is listed and has the status Up (not Exited).
 
 2. Verify Docker Networks:
 
-Confirm that both mysql-container and nodejs-container are connected to the correct Docker networks (mysqlnet and nodejsnet). You can list Docker networks with:
+Confirm that both mysql-container and nodejs-container are connected to the correct Docker networks (mysqlnet and nodejsnet). We can list Docker networks with:
 
 ```bash
 docker network ls
 
---Check if both mysqlnet and nodejsnet exist and confirm that your containers are attached to these networks.
+--Check if both mysqlnet and nodejsnet exist and confirm that containers are attached to these networks.
 ```
 
 3. Access MySQL Container Logs:
 
-Review the logs of your MySQL container (mysql-container) to check for any startup errors or issues:
+Review the logs of MySQL container (mysql-container) to check for any startup errors or issues:
 
 ```bash
 
@@ -1632,12 +1616,12 @@ docker logs mysql-container
 
 4. Node.js Application Configuration:
 
-Ensure that your Node.js application (index.js) has the correct MySQL connection settings. Double-check the following in index.js:
+Ensure that Node.js application (index.js) has the correct MySQL connection settings. Double-check the following in index.js:
 
 Hostname should be mysql-container.
-Username (myuser) and password (mypassword) should match the credentials set up in your MySQL container.
-Database name (mydatabase) should match the name of your MySQL database.
-Here’s an example of how your MySQL connection setup in index.js should look:
+Username (myuser) and password (mypassword) should match the credentials set up in MySQL container.
+Database name (mydatabase) should match the name of MySQL database.
+Here is example of how MySQL connection setup in index.js should look:
 
 ```bash
 javascript
@@ -1651,25 +1635,22 @@ const connection = mysql.createConnection({
 ```
 
 5. Restart Node.js Container:
-If you made changes to index.js or if you suspect issues with the Node.js container (nodejs-container), restart it:
+If any changes made to index.js or if suspect issues with the Node.js container (nodejs-container), restart it:
 
 ```bash
 docker restart nodejs-container
 ```
 
 6. Test Endpoint:
-After ensuring all configurations are correct and containers are running, test your Node.js application endpoint again using curl:
+After ensuring all configurations are correct and containers are running, test Node.js application endpoint again using curl:
 
 ```bash
 curl http://localhost:3000/random
 ```
 
-If everything is set up correctly, you should receive a JSON response with a random row from your mytable table.
+If everything is set up correctly, we should receive a JSON response with a random row from mytable table.
 
-Error Handling and Debugging:
 
-Ensure that your Node.js application (index.js) has proper error handling to log any errors that occur during MySQL queries or server operations.
-Add console logs or use Docker's logging facilities (docker logs nodejs-container) to debug and trace where the error is occurring.
 
 
 ## What to submit
