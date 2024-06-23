@@ -1240,7 +1240,7 @@ C2 : 172.19.0.2
 
 5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** 
 ```bash
-ANSWER : No, I cannot ping C1 to C2
+ANSWER : No, we cannot ping C1 to C2.
 
 OUTPUT : 
 @marziq ➜ /workspaces/OSProject (main) $ docker exec c1 ping c2
@@ -1271,7 +1271,7 @@ OUTPUT
 1. Are you able to ping? Show your output . ***(1 mark)*** 
 
 ```bash
-ANSWER : Yes, I can ping. 
+ANSWER : Yes, We can ping. 
 
 OUTPUT : 
 @marziq ➜ /workspaces/OSProject (main) $ docker exec c1 ping c2
