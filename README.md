@@ -1142,9 +1142,9 @@ OUTPUT
 3. Then, run the apache webserver and mount the webpage directory to it. Hint:
 ```bash
 ## the -p 8080:80 flag points the host port 8080 to the container port 80
-![alt text](image.png)
 docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ -p 8080:80 httpd
 ```
+![alt text](image.png)
 
 4. If it works, codespace will trigger a port assignment and provide a URL for you to access your webpage like the one below.
 
