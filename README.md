@@ -1138,11 +1138,11 @@ OUTPUT
 @marziq ➜ /workspaces/OSProject (main) $ cd webpage
 @marziq ➜ /workspaces/OSProject (main) $ echo '<html><body><h1>Hello, World!</h1></body></html>' > index.html
 ```
-![alt text](image-1.png)
+
 3. Then, run the apache webserver and mount the webpage directory to it. Hint:
 ```bash
 ## the -p 8080:80 flag points the host port 8080 to the container port 80
-
+![alt text](image.png)
 docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ -p 8080:80 httpd
 ```
 
