@@ -1124,7 +1124,21 @@ root@c58712141ff3:~#
 ## You are on your own, create your own static webpage
 
 1. Create a directory called webpage in your host machine
+
+OUTPUT
+```bash
+@marziq ➜ /workspaces/OSProject (main) $ mkdir webpage
+@marziq ➜ /workspaces/OSProject (main) $ 
+```
+
 2. Inside the directory, create a page index.html, with any content you would like
+
+OUTPUT
+```bash
+@marziq ➜ /workspaces/OSProject (main) $ cd webpage
+@marziq ➜ /workspaces/OSProject (main) $ echo '<html><body><h1>Hello, World!</h1></body></html>' > index.html
+```
+![alt text](image-1.png)
 3. Then, run the apache webserver and mount the webpage directory to it. Hint:
 ```bash
 ## the -p 8080:80 flag points the host port 8080 to the container port 80
