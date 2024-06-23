@@ -577,26 +577,30 @@ shm                65536        0     65536   0% /dev/shm
 
 5. Run the command **ls** . ***(1 mark)*** 
 
-  ```bash
+```bash
   @marziq ➜ /workspaces/OSProject (main) $ ls
-  README.md  images
-  ```
+  README.md  images  mkdir  myroot  nodejs-app  webpage
+```
 6. Run the command **ls -asl** . ***(1 mark)*** 
 
 ```bash
 @marziq ➜ /workspaces/OSProject (main) $ ls -asl
-total 40
- 4 drwxrwxrwx+ 4 codespace root  4096 Jun  1 10:48 .
- 4 drwxr-xrwx+ 5 codespace root  4096 Jun  1 10:49 ..
- 4 drwxrwxrwx+ 9 codespace root  4096 Jun  1 12:44 .git
-24 -rw-rw-rw-  1 codespace root 22934 Jun  1 12:45 README.md
- 4 drwxrwxrwx+ 2 codespace root  4096 Jun  1 10:48 images
+total 108
+ 4 drwxrwxrwx+ 8 codespace root       4096 Jun 22 14:40 .
+ 4 drwxr-xrwx+ 5 codespace root       4096 Jun 15 14:28 ..
+ 4 drwxrwxrwx+ 9 codespace root       4096 Jun 22 15:33 .git
+76 -rw-rw-rw-  1 codespace codespace 76104 Jun 22 15:33 README.md
+ 4 drwxrwxrwx+ 2 codespace root       4096 Jun 15 14:28 images
+ 4 drwxrwxrwx+ 2 codespace codespace  4096 Jun 15 14:28 mkdir
+ 4 drwxrwxrwx+ 3 codespace codespace  4096 Jun 22 14:09 myroot
+ 4 drwxrwxrwx+ 3 codespace codespace  4096 Jun 22 14:48 nodejs-app
+ 4 drwxrwxrwx+ 2 codespace codespace  4096 Jun 22 14:12 webpage
 ```
 7. Run the command **free -h** . ***(1 mark)***
 ```bash
 @marziq ➜ /workspaces/OSProject (main) $ free -h
               total        used        free      shared  buff/cache   available
-Mem:          7.7Gi       1.4Gi       229Mi       1.0Mi       6.1Gi       6.0Gi
+Mem:          7.7Gi       1.3Gi       311Mi        61Mi       6.2Gi       6.1Gi
 Swap:            0B          0B          0B
 ```
 
@@ -679,7 +683,7 @@ Linux codespaces-48772a 6.5.0-1021-azure #22~22.04.1-Ubuntu SMP Tue Apr 30 16:08
 ```
 11. What is the available free memory in the system. ***(1 mark)***
 ```bash
-229Mi
+311Mi
 ```
 12. What is the available disk space mounted on /workspace. ***(1 mark)*** 
 ```bash
@@ -1080,27 +1084,16 @@ root@c58712141ff3:~#
 
 ```bash
 ANSWER : The output -rw-rw-rw- 1 root root 15 Jun 22 13:49 /root/helloNice.txt can be broken down as follows:
-
 -rw-rw-rw- : These are the permissions for the file. In this case, it indicates that the file is readable and writeable for all users (owner, group and others)
-
 1 : This indicates the number of hard links to the file
-
 root : The first occurrence of root indicates the user who owns the file. In this case, it's owned by the root user.
-
 root : The second occurrence of root indicates the group to which the file belongs. In this case, it's assigned to the root group
-
 15 : This represents the file size in bytes.
-
 Jun 22 13:49 : This indicates the date and time when the file was last modified.
-
 /root/helloNice.txt : This is the path to the file.
-
 Therefore, based on the provided information:
-
-User: root
-
-Group: root
-
+User : root
+Group : root
 The file helloNice.txt is owned by the root user and belongs to the root group within the Docker container.
 ```
 
